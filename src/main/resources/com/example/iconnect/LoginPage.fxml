@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MyPane" prefHeight="550.0" prefWidth="1024.0" stylesheets="@LoginCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.LoginPage">
+   <children>
+      <AnchorPane fx:id="LoginPane" layoutX="257.0" layoutY="42.0" prefHeight="466.0" prefWidth="521.0" stylesheets="@LoginCss.css">
+         <children>
+            <TextField fx:id="UsernameTF" layoutX="92.0" layoutY="169.0" prefHeight="41.0" prefWidth="335.0" promptText="Username" stylesheets="@LoginCss.css">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="PassF" layoutX="91.0" layoutY="269.0" prefHeight="45.0" prefWidth="335.0" promptText="Password">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+            </PasswordField>
+            <ImageView fitHeight="213.0" fitWidth="366.0" layoutX="72.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@iConnect.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="LoginBTN" layoutX="91.0" layoutY="351.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" stylesheets="@LoginCss.css" text="Login" textFill="#cccccc">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow height="65.0" radius="32.75" spread="0.33" width="68.0">
+                     <color>
+                        <Color red="0.800000011920929" green="0.800000011920929" blue="0.800000011920929" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="SignUpBTN" layoutX="313.0" layoutY="351.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="112.0" stylesheets="@LoginCss.css" text="Signup" textFill="#cccccc">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow height="67.63" radius="33.4075" spread="0.33" width="68.0">
+                     <color>
+                        <Color red="0.800000011920929" green="0.800000011920929" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,45 @@
+#MyPane{
+    -fx-background-image: url("Background.jpg");
+    -fx-background-size: 100% 100%; /* Stretch to fill the pane */
+    -fx-background-size: cover; /* Cover the pane while maintaining aspect ratio */
+}
+#LoginPane{
+    -fx-background-color: rgba(35, 45, 63, 0.37);
+    -fx-background-radius: 25;
+}
+#UsernameTF{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 3px;
+    -fx-text-fill: rgba(204,204,204);
+}
+#PassF{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 3px;
+    -fx-text-fill: rgba(204,204,204);
+}
+#LoginBTN{
+    -fx-background-image: url("RocketIcon.png");
+    -fx-background-size: contain;
+    -fx-background-position: center;
+    -fx-background-color: Transparent;
+    -fx-background-radius: 500px;
+    -fx-border-color: Black;
+    -fx-border-width: 3px;
+}
+#LoginBTN:hover{
+    -fx-skin : 'com.example.iconnect.MyButtonSkin';
+}
+#SignUpBTN{
+    -fx-background-image: url("RocketIcon.png");
+    -fx-background-size: contain;
+    -fx-background-position: center;
+    -fx-background-color: Transparent;
+    -fx-background-radius: 100px;
+    -fx-border-color: Black;
+    -fx-border-width: 3px;
+}
+#SignUpBTN:hover{
+    -fx-skin : 'com.example.iconnect.MyButtonSkin';
+}
