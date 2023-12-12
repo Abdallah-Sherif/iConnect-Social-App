@@ -23,6 +23,7 @@ import java.util.List;
  */
 public class UserManager {
     public static List<User> users = new ArrayList<>();
+    public static User curr_user;
     protected static String usersFilePath = "users.dat";
     public UserManager() {
         
@@ -70,12 +71,29 @@ public class UserManager {
         }
         System.out.println("done");
     }
+    public static List<Post> getPostsToLoad()
+    {
+        List<Post> posts = new ArrayList<>();
+        for(User user : users)
+        {
+            if(user.equals(curr_user)) continue;
+            for(Post post : user.getPosts())
+            {
+                if(!post.getPrivacy() || user.getFriends().contains(curr_user))
+                {
+                    posts.add(post);
+                }
+            }
+        }
+        return posts;
+    }
     public static User IsUser(String Username,String Password)
     {
         for(User user: users)
         {
             if(Username.equals(user.getUsername())&&Password.equals(user.getPassword()))
             {
+                curr_user = user;
                 return user;
             }
         }

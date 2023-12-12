@@ -1,8 +1,12 @@
 package com.example.iconnect.Entities;
 
 
+import javafx.scene.image.Image;
+
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -10,6 +14,9 @@ public class User implements Serializable {
 
     private String username;
     private String password;
+    private String email;
+    private LocalDate birthdate;
+    private String gender;
     private List<User> friends;
     private List<User> sentFriendRequests;
     private List<User> receivedFriendRequests;
@@ -25,9 +32,12 @@ public class User implements Serializable {
         CurrentNotifications.add(newNotification);
     }
 
-    public User(String username,String password) {
+    public User(String username,String password,String Email,String Gender,LocalDate BirthDate) {
         this.username = username;
         this.password = password;
+        this.email = Email;
+        this.gender = Gender;
+        this.birthdate = BirthDate;
         this.friends = new ArrayList<>();
         this.sentFriendRequests = new ArrayList<>();
         this.receivedFriendRequests = new ArrayList<>();

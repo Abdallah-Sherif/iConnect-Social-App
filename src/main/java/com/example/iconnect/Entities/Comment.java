@@ -3,7 +3,9 @@ package com.example.iconnect.Entities;
 import com.example.iconnect.Entities.Post;
 import com.example.iconnect.Entities.User;
 
-public class Comment {
+import java.io.Serializable;
+
+public class Comment implements Serializable {
 
     private Post post;
     private User user;

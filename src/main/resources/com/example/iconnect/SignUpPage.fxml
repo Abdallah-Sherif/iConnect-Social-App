@@ -1,14 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.iconnect.SignUpPage"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="SignUpPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@SignUpCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.SignUpPage">
+   <children>
+      <AnchorPane fx:id="SignUpPane" layoutX="155.0" layoutY="105.0" prefHeight="492.0" prefWidth="964.0" stylesheets="@SignUpCss.css">
+         <children>
+            <TextField fx:id="UsernameTF" layoutX="548.0" layoutY="60.0" prefHeight="41.0" prefWidth="335.0" promptText="Full Name" stylesheets="@SignUpCss.css">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+            </TextField>
+            <PasswordField fx:id="PassF" layoutX="548.0" layoutY="220.0" prefHeight="45.0" prefWidth="335.0" promptText="Password" stylesheets="@SignUpCss.css">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+            </PasswordField>
+            <ImageView fitHeight="213.0" fitWidth="366.0" layoutX="72.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@iConnect.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="LoginBTN" layoutX="72.0" layoutY="329.0" mnemonicParsing="false" onAction="#setLoginBTN" prefHeight="25.0" prefWidth="112.0" stylesheets="@LoginCss.css" text="Login" textFill="#cccccc">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow height="65.0" radius="32.75" spread="0.33" width="68.0">
+                     <color>
+                        <Color red="0.800000011920929" green="0.800000011920929" blue="0.800000011920929" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Button fx:id="SignUpBTN" layoutX="326.0" layoutY="329.0" mnemonicParsing="false" onAction="#setSignUpBTN" prefHeight="25.0" prefWidth="112.0" stylesheets="@LoginCss.css" text="Signup" textFill="#cccccc">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+               <effect>
+                  <DropShadow height="67.63" radius="33.4075" spread="0.33" width="68.0">
+                     <color>
+                        <Color red="0.800000011920929" green="0.800000011920929" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <PasswordField fx:id="PassFC" layoutX="548.0" layoutY="300.0" prefHeight="45.0" prefWidth="335.0" promptText="Confirm Password" stylesheets="@SignUpCss.css">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+            </PasswordField>
+            <TextField fx:id="EmailTF" layoutX="548.0" layoutY="140.0" prefHeight="41.0" prefWidth="335.0" promptText="Email" stylesheets="@SignUpCss.css">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+            </TextField>
+            <RadioButton fx:id="MaleRBTN" layoutX="548.0" layoutY="380.0" mnemonicParsing="false" stylesheets="@SignUpCss.css" text="Male" textFill="#cccccc">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Gender" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="FemaleRBTN" layoutX="765.0" layoutY="380.0" mnemonicParsing="false" stylesheets="@SignUpCss.css" text="Female" textFill="#cccccc" toggleGroup="$Gender">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+            </RadioButton>
+            <DatePicker fx:id="DatePick" layoutX="629.0" layoutY="440.0" stylesheets="@SignUpCss.css" />
+            <Label fx:id="ErrorLabel" alignment="CENTER" layoutX="80.0" layoutY="140.0" prefHeight="185.0" prefWidth="358.0" textAlignment="CENTER" textFill="#7c0000" wrapText="true">
+               <font>
+                  <Font name="TimeBurner Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

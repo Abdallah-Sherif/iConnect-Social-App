@@ -1,4 +1,6 @@
 package com.example.iconnect.Entities;
+import javafx.scene.image.Image;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ public class Post implements Serializable{
     private User author;
     private LocalDateTime timestamp;
     
-    private byte[] imageData;//private String image;
+    private Image imageData;//private String image;
     private int Post_ID;
     private static int UniversalID=0;
     private boolean Privacy = true;
@@ -27,7 +29,7 @@ public class Post implements Serializable{
         this.timestamp = LocalDateTime.now();
         Post_ID = UniversalID;
         Privacy = isPrivate;
-        //this.image = null;
+        //this.imageData = image;
         UniversalID++;
         
     }
@@ -47,11 +49,11 @@ public class Post implements Serializable{
         return timestamp;
     }
     
-    public byte[] getImageData() {
+    public Image getImageData() {
         return imageData;
     }
 
-    public void setImageData(byte[] imageData) {
+    public void setImageData(Image imageData) {
         this.imageData = imageData;
     }
     

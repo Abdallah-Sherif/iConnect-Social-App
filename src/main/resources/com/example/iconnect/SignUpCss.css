@@ -1,0 +1,117 @@
+#SignUpPage
+{
+    -fx-background-image: url("Background.jpg");
+    -fx-background-size: 100% 100%; /* Stretch to fill the pane */
+    -fx-background-size: cover; /* Cover the pane while maintaining aspect ratio */
+}
+#SignUpPane{
+    -fx-background-color: rgba(35, 45, 63, 0.37);
+    -fx-background-radius: 25;
+}
+#UsernameTF{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 3px;
+    -fx-text-fill: rgba(204,204,204);
+}
+#EmailTF{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 3px;
+    -fx-text-fill: rgba(204,204,204);
+}
+#PassF{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 3px;
+    -fx-text-fill: rgba(204,204,204);
+}
+#PassFC{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent black transparent;
+    -fx-border-width: 3px;
+    -fx-text-fill: rgba(204,204,204);
+}
+#LoginBTN{
+    -fx-background-image: url("RocketIcon.png");
+    -fx-background-size: contain;
+    -fx-background-position: center;
+    -fx-background-color: Transparent;
+    -fx-background-radius: 500px;
+    -fx-border-color: Black;
+    -fx-border-width: 3px;
+}
+#LoginBTN:hover{
+    -fx-skin : 'com.example.iconnect.MyButtonSkin';
+}
+#SignUpBTN{
+    -fx-background-image: url("RocketIcon.png");
+    -fx-background-size: contain;
+    -fx-background-position: center;
+    -fx-background-color: Transparent;
+    -fx-background-radius: 100px;
+    -fx-border-color: Black;
+    -fx-border-width: 3px;
+}
+#SignUpBTN:hover{
+    -fx-skin : 'com.example.iconnect.MyButtonSkin';
+}
+.radio-button .radio {
+    -fx-border-width: 2px;
+    -fx-border-color: rgba(204,204,204);
+    -fx-background-color: Transparent;
+    -fx-background-image: null;
+    -fx-border-radius: 15px;
+    -fx-padding: 3px;
+}
+.radio-button .radio:selected {
+    -fx-background-color: Transparent;
+}
+.radio-button .dot {
+    -fx-background-radius: 15px;
+    -fx-padding: 8px;
+}
+
+.date-picker{
+    -fx-background-color: Transparent;
+}
+.date-picker .arrow-button {
+    -fx-background-color: rgba(204,204,204);
+    -fx-background-radius: 0;
+}
+.date-picker .arrow-button:hover {
+    -fx-background-color: rgba(204,204,204);
+}
+.date-picker .arrow-button .arrow {
+    -fx-background-color: Black;
+}
+.date-picker .cell {
+    -fx-background-color: rgba(204,204,204);
+}
+.date-picker .cell:hover {
+    -fx-background-color: rgb(173, 173, 173);
+}
+.date-picker .cell:focused {
+    -fx-background-color: rgb(173, 173, 173);
+}
+.date-picker .selected {
+    -fx-background-color: rgba(204,204,204);
+    -fx-text-fill: white;
+}
+.date-picker .selected:focused {
+    -fx-background-color: rgba(204,204,204);
+    -fx-text-fill: Black;
+}
+.date-picker-popup  {
+    -fx-border-color: transparent;
+}
+.date-picker-popup .month-year-pane {
+    -fx-background-color: rgba(204,204,204);
+}
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: Black;
+}
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: Black;
+}
