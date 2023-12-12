@@ -1,10 +1,21 @@
 package com.example.iconnect.Entities;
 import javafx.scene.image.Image;
 
+import java.awt.image.RenderedImage;
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.image.Image;
+import javafx.scene.image.PixelFormat;
+import javafx.scene.image.WritableImage;
+
+import java.io.ByteArrayOutputStream;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.util.Objects;
+import javax.imageio.ImageIO;
 
 
 public class Post implements Serializable{
@@ -12,8 +23,8 @@ public class Post implements Serializable{
     private String content;
     private User author;
     private LocalDateTime timestamp;
-    
-    private Image imageData;//private String image;
+
+    private String imageUrl;
     private int Post_ID;
     private static int UniversalID=0;
     private boolean Privacy = true;
@@ -23,13 +34,13 @@ public class Post implements Serializable{
     
     List<Post> randomPost=new ArrayList<>();
     
-    public Post(String content, User author,boolean isPrivate) {
+    public Post(String content, User author,boolean isPrivate,String imageUrl) {
         this.content = content;
         this.author = author;
         this.timestamp = LocalDateTime.now();
+        this.imageUrl = imageUrl;
         Post_ID = UniversalID;
         Privacy = isPrivate;
-        //this.imageData = image;
         UniversalID++;
         
     }
@@ -49,12 +60,12 @@ public class Post implements Serializable{
         return timestamp;
     }
     
-    public Image getImageData() {
-        return imageData;
+    public String getImageData() {
+        return imageUrl;
     }
 
-    public void setImageData(Image imageData) {
-        this.imageData = imageData;
+    public void setImageData(String image) throws IOException {
+        imageUrl = image;
     }
     
     

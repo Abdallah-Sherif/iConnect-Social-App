@@ -110,8 +110,8 @@ public class User implements Serializable {
     }
     
     //button
-    public void createPost(String content, User get, boolean par) {
-        Post post = new Post(content, this,false);
+    public void createPost(String content, User get, boolean par,String imageUrl) {
+        Post post = new Post(content, this,par,imageUrl);
         addPost(post);
     }
     

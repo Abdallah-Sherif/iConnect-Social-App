@@ -28,19 +28,24 @@ public class HomePage implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        for(User user : UserManager.users)
-        {
-            user.createPost("Hii",user,false);
-        }
         recentPosts.addAll(UserManager.getPostsToLoad());
         try{
             for (Post post : recentPosts) {
-                //FXMLLoader fxmlLoader = new FXMLLoader();
-                //fxmlLoader.setLocation(getClass().getResource("PostTextOnly.fxml"));
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("PostTextOnly.fxml"));
-                Parent root = fxmlLoader.load();
-                PostController postController = fxmlLoader.getController();
-                postController.setData(post);
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                Parent root;
+                if(post.getImageData() == null)
+                {
+                    fxmlLoader.setLocation(getClass().getResource("PostTextOnly.fxml"));
+                    root = fxmlLoader.load();
+                    PostController postController = fxmlLoader.getController();
+                    postController.setData(post,false);
+                }else
+                {
+                    fxmlLoader.setLocation(getClass().getResource("PostImageOnly.fxml"));
+                    root = fxmlLoader.load();
+                    PostController postController = fxmlLoader.getController();
+                    postController.setData(post,true);
+                }
                 PostCardLayout.getChildren().add(root);
             }
         }catch (IOException e)
