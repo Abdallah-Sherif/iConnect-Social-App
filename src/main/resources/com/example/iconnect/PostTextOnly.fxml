@@ -60,7 +60,7 @@
                                  </image>
                               </ImageView>
                               <Separator opacity="0.0" orientation="VERTICAL" prefHeight="88.0" prefWidth="16.0" />
-                              <Label text="Like" textFill="#cccccc">
+                              <Label fx:id="LikeLabel" text="Like" textFill="#cccccc">
                                  <font>
                                     <Font name="TimeBurner Bold" size="18.0" />
                                  </font>
@@ -78,7 +78,7 @@
                                  </image>
                               </ImageView>
                               <Separator opacity="0.0" orientation="VERTICAL" prefHeight="88.0" prefWidth="16.0" />
-                              <Label text="Comments" textFill="#cccccc">
+                              <Label fx:id="CommentLabel" text="Comments" textFill="#cccccc">
                                  <font>
                                     <Font name="TimeBurner Bold" size="18.0" />
                                  </font>
@@ -96,7 +96,7 @@
                                  </image>
                               </ImageView>
                               <Separator opacity="0.0" orientation="VERTICAL" prefHeight="88.0" prefWidth="16.0" />
-                              <Label text="Share" textFill="#cccccc">
+                              <Label fx:id="ShareLabel" text="Share" textFill="#cccccc">
                                  <font>
                                     <Font name="TimeBurner Bold" size="18.0" />
                                  </font>

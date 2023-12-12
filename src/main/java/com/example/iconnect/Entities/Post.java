@@ -29,18 +29,29 @@ public class Post implements Serializable{
     private static int UniversalID=0;
     private boolean Privacy = true;
     
-    private List<User> likes;
-    private List<Comment> comments;
+    private List<User> likes = new ArrayList<>();
+
+    public List<User> getTaggedUsers() {
+        return taggedUsers;
+    }
+
+    public void setTaggedUsers(List<User> taggedUsers) {
+        this.taggedUsers = taggedUsers;
+    }
+
+    private List<User> taggedUsers = new ArrayList<>();
+    private List<Comment> comments = new ArrayList<>();
     
-    List<Post> randomPost=new ArrayList<>();
+    List<Post> randomPost = new ArrayList<>();
     
-    public Post(String content, User author,boolean isPrivate,String imageUrl) {
+    public Post(String content, User author,boolean isPrivate,String imageUrl,List<User> taggedusers) {
         this.content = content;
         this.author = author;
         this.timestamp = LocalDateTime.now();
         this.imageUrl = imageUrl;
         Post_ID = UniversalID;
         Privacy = isPrivate;
+        this.taggedUsers.addAll(taggedusers);
         UniversalID++;
         
     }

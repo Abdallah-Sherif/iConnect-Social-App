@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -10,6 +11,9 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane fx:id="MyBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@HomePageCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.HomePage">
@@ -84,7 +88,78 @@
    <center>
       <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="574.0" prefWidth="930.0" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
-            <VBox fx:id="PostCardLayout" prefHeight="786.0" prefWidth="928.0" style="-fx-background-color: #2b3137;" />
+            <VBox fx:id="PostCardLayout" prefHeight="786.0" prefWidth="928.0" style="-fx-background-color: #2b3137;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-radius: 25px; -fx-background-color: #121212;">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="251.0">
+                           <children>
+                              <ImageView fitHeight="59.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@WritingIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Separator opacity="0.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="23.0" />
+                              <Button mnemonicParsing="false" onAction="#GoToCreatePostText" prefHeight="30.0" prefWidth="144.0" style="-fx-background-radius: 100px;" text="Write A Post">
+                                 <font>
+                                    <Font name="TimeBurner Bold" size="18.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.7166666388511658" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="174.0" layoutY="10.0" prefHeight="100.0" prefWidth="251.0">
+                           <children>
+                              <ImageView fitHeight="59.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@ImageIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Separator opacity="0.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="23.0" />
+                              <Button mnemonicParsing="false" onAction="#GoToCreatePostImage" prefHeight="30.0" prefWidth="144.0" style="-fx-background-radius: 100px;" text="Post a picture">
+                                 <font>
+                                    <Font name="TimeBurner Bold" size="18.0" />
+                                 </font>
+                                 <textFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.7166666388511658" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </textFill>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children></VBox>
          </content>
          <BorderPane.margin>
             <Insets />

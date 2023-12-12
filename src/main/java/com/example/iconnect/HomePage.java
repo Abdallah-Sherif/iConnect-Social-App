@@ -3,13 +3,16 @@ package com.example.iconnect;
 import com.example.iconnect.Entities.Post;
 import com.example.iconnect.Entities.User;
 import com.example.iconnect.FileManagement.UserManager;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -23,12 +26,12 @@ public class HomePage implements Initializable {
 
     @FXML
     VBox PostCardLayout;
-    private User current_user = UserManager.curr_user;
     private List<Post> recentPosts = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         recentPosts.addAll(UserManager.getPostsToLoad());
+        Collections.shuffle(recentPosts);
         try{
             for (Post post : recentPosts) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
@@ -39,7 +42,8 @@ public class HomePage implements Initializable {
                     root = fxmlLoader.load();
                     PostController postController = fxmlLoader.getController();
                     postController.setData(post,false);
-                }else
+                }
+                else
                 {
                     fxmlLoader.setLocation(getClass().getResource("PostImageOnly.fxml"));
                     root = fxmlLoader.load();
@@ -52,5 +56,15 @@ public class HomePage implements Initializable {
         {
             e.printStackTrace();
         }
+    }
+    public void GoToCreatePostText(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateText.fxml"));
+        StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
+        SceneTransitions.doFadeIn(StartUpPane,root);
+    }
+    public void GoToCreatePostImage(ActionEvent e) throws IOException {
+        Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateImage.fxml"));
+        StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
+        SceneTransitions.doFadeIn(StartUpPane,root);
     }
 }
