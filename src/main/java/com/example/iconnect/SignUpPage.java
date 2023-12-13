@@ -46,7 +46,7 @@ public class SignUpPage {
     public void setLoginBTN(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("LoginPage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root);
+        SceneTransitions.doFadeIn(StartUpPane,root,true);
     }
     public void setSignUpBTN(ActionEvent e) throws IOException {
         String UserName = UsernameTF.getText();
@@ -111,7 +111,7 @@ public class SignUpPage {
         UserManager.AddUser(NewUser);
         Parent root = FXMLLoader.load(this.getClass().getResource("LoginPage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root);
+        SceneTransitions.doFadeIn(StartUpPane,root,true);
         //switchToPage("HomePage");
         //homepage.initializeHomepage();
         //CureentUser = NewUser;

@@ -60,11 +60,11 @@ public class HomePage implements Initializable {
     public void GoToCreatePostText(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateText.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root);
+        SceneTransitions.doFadeIn(StartUpPane,root,true);
     }
     public void GoToCreatePostImage(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateImage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root);
+        SceneTransitions.doFadeIn(StartUpPane,root,true);
     }
 }

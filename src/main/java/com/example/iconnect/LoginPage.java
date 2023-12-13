@@ -51,7 +51,7 @@ public class LoginPage {
         {
             FXMLLoader loader = new FXMLLoader(this.getClass().getResource("HomePage.fxml"));
             Parent root = loader.load();
-            SceneTransitions.doFadeIn(StartUpPane,root);
+            SceneTransitions.doFadeIn(StartUpPane,root,true);
         }
         else
         {
@@ -60,6 +60,6 @@ public class LoginPage {
     }
     public void setSignUpBTN(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("SignUpPage.fxml"));
-        SceneTransitions.doFadeIn(StartUpPane,root);
+        SceneTransitions.doFadeIn(StartUpPane,root,true);
     }
 }

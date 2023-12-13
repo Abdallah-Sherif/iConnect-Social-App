@@ -48,6 +48,7 @@ public class PostCreationGUI implements Initializable {
     ImageView PostImageView;
     private String ImageUrl;
     private Path currentImagePath;
+    boolean alreadyExists = true;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -67,7 +68,7 @@ public class PostCreationGUI implements Initializable {
         }
         Parent root = FXMLLoader.load(this.getClass().getResource("HomePage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root);
+        SceneTransitions.doFadeIn(StartUpPane,root,true);
     }
     private void getAvailabelUsers()
     {
@@ -83,13 +84,13 @@ public class PostCreationGUI implements Initializable {
         chooseProfilePicture();
     }
     public void returnToHomepage(ActionEvent e) throws IOException {
-        if(currentImagePath!= null)
+        if(currentImagePath!= null & !alreadyExists)
         {
             Files.delete(currentImagePath);
         }
         Parent root = FXMLLoader.load(this.getClass().getResource("HomePage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root);
+        SceneTransitions.doFadeIn(StartUpPane,root,true);
     }
     private String chooseProfilePicture() {
         FileChooser fileChooser = new FileChooser();
@@ -106,6 +107,7 @@ public class PostCreationGUI implements Initializable {
                 if(!Files.exists(to))
                 {
                     Files.copy(from, to);
+                    alreadyExists = false;
                 }
                 ImageUrl = "PostImages/" + selectedFile.getName();
                 Image image = new Image(selectedFile.toURI().toString());

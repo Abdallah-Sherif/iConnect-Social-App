@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PostSelectedPanel" onMouseClicked="#returnToHomepage" prefHeight="720.0" prefWidth="1280.0" stylesheets="@PostCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.PostComments">
+   <children>
+      <VBox alignment="CENTER" layoutX="316.0" layoutY="60.0" maxHeight="600.0" maxWidth="649.0" prefHeight="600.0" prefWidth="649.0" style="-fx-background-color: #242526; -fx-background-radius: 20;">
+         <children>
+            <HBox prefHeight="27.0" prefWidth="649.0" />
+            <HBox prefWidth="649.0">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" maxHeight="500.0" maxWidth="649.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="649.0" style="-fx-background-color: Transparent; -fx-focus-color: Transparent;" vbarPolicy="NEVER">
+                     <content>
+                        <VBox alignment="TOP_CENTER" fillWidth="false" minHeight="-Infinity" minWidth="-Infinity" prefWidth="648.0" style="-fx-background-color: #242526;">
+                           <children>
+                              <Separator opacity="0.0" orientation="VERTICAL" prefHeight="39.0" prefWidth="0.0" />
+                              <VBox fx:id="PostVBox" prefWidth="648.0" />
+                              <VBox fx:id="CommentsSP" layoutX="334.0" layoutY="49.0" prefWidth="648.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="91.0" prefWidth="649.0">
+               <children>
+                  <ImageView fx:id="UserImageV" fitHeight="58.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@user.png" />
+                     </image>
+                  </ImageView>
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="17.0" />
+                  <TextField fx:id="ContentTF" prefHeight="68.0" prefWidth="362.0" promptText="Enter comment" style="-fx-background-radius: 100;">
+                     <font>
+                        <Font name="TimeBurner Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="26.0" />
+                  <Button mnemonicParsing="false" onAction="#CreateNewComment" text="Add Comment" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

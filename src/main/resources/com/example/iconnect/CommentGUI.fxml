@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.CommentController">
+   <children>
+      <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #3a3b3c; -fx-background-radius: 100;">
+         <children>
+            <ImageView fx:id="UserImageV" fitHeight="80.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user.png" />
+               </image>
+               <HBox.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </HBox.margin>
+            </ImageView>
+            <VBox alignment="CENTER">
+               <HBox.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </HBox.margin>
+               <children>
+                  <Label fx:id="UsernameL" alignment="CENTER" layoutX="10.0" layoutY="34.0" text="Username" textFill="#cccccc" wrapText="true">
+                     <font>
+                        <Font name="TimeBurner Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator />
+                  <Label fx:id="ContentL" maxWidth="471.0" text="test" textFill="#cccccc" wrapText="true">
+                     <font>
+                        <Font name="TimeBurner Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</VBox>

@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="MyBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@HomePageCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.HomePage">
+<BorderPane fx:id="MyBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #18191a;" stylesheets="@HomePageCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.HomePage">
    <top>
       <HBox fx:id="HBoxTop" alignment="CENTER" prefHeight="70.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
@@ -72,25 +72,25 @@
       </HBox>
    </top>
    <left>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="650.0" prefWidth="350.0" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="650.0" prefWidth="350.0" style="-fx-background-color: Transparent; -fx-focus-color: Transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
-            <VBox prefHeight="804.0" prefWidth="177.0" />
+            <VBox prefHeight="804.0" prefWidth="348.0" style="-fx-background-color: #18191a;" />
          </content>
       </ScrollPane>
    </left>
    <right>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="650.0" prefWidth="350.0" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="650.0" prefWidth="350.0" style="-fx-background-color: Transparent; -fx-focus-color: Transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
-            <VBox prefHeight="802.0" prefWidth="178.0" />
+            <VBox prefHeight="802.0" prefWidth="349.0" style="-fx-background-color: #18191a;" />
          </content>
       </ScrollPane>
    </right>
    <center>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="574.0" prefWidth="930.0" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="574.0" prefWidth="930.0" style="-fx-background-color: #18191a; -fx-focus-color: Transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
-            <VBox fx:id="PostCardLayout" prefHeight="786.0" prefWidth="928.0" style="-fx-background-color: #2b3137;">
+            <VBox fx:id="PostCardLayout" prefWidth="578.0" style="-fx-background-color: #18191a;">
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-radius: 25px; -fx-background-color: #121212;">
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-radius: 25px; -fx-background-color: #242526;">
                      <children>
                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="251.0">
                            <children>

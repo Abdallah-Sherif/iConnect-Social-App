@@ -79,7 +79,15 @@ public class Post implements Serializable{
         imageUrl = image;
     }
     
-    
+    public void addComment(User author,String content)
+    {
+        Comment comment = new Comment(this,author,content);
+        comments.add(comment);
+    }
+    public void removeComment(Comment comment)
+    {
+        comments.remove(comment);
+    }
     
     public void editContent(String newContent) {
         this.content = newContent;
@@ -133,6 +141,6 @@ public class Post implements Serializable{
     }
 // edit it
     public void addComment(Comment comment) {
-       
+       comments.add(comment);
     }
 }
