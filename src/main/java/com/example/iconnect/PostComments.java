@@ -40,8 +40,9 @@ public class PostComments {
     private Post current_post;
     @FXML
     private AnchorPane PostSelectedPanel;
-
-    public void setPostPanel(Parent postPanel,Post post) {
+    private PostController curr_post_controller;
+    public void setPostPanel(Parent postPanel,Post post, PostController curr_post_controller) {
+        this.curr_post_controller = curr_post_controller;
         current_post = post;
         this.postPanel = postPanel;
         PostVBox.getChildren().add(postPanel);
@@ -82,6 +83,7 @@ public class PostComments {
     }
     public void returnToHomepage(MouseEvent event)
     {
+        curr_post_controller.setData(current_post, curr_post_controller.isImage);
         StackPane StartUpPane = (StackPane)((Node)event.getSource()).getScene().getRoot();
         StartUpPane.getChildren().remove(PostSelectedPanel);
     }

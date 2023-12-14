@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class PostController {
+public class PostController implements Initializable {
 
     @FXML
     ImageView ProfileImage;
@@ -35,9 +35,22 @@ public class PostController {
     ImageView PostImageView;
     @FXML
     Label LikeLabel;
+    @FXML
+    ImageView LikeIcon;
     Post Curr_post;
+    Image LikeOn;
+    Image LikeOff;
+    @FXML
+    Label CommentLabel;
+    boolean isImage;
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        LikeOn = new Image(getClass().getResourceAsStream("likeActive.png"));
+        LikeOff = new Image(getClass().getResourceAsStream("like.png"));
+    }
     public void setData(Post post,boolean isImage)
     {
+        this.isImage = isImage;
         Curr_post = post;
         UsernameTF.setText(post.getAuthor().getUsername());
         if(isImage)
@@ -49,15 +62,27 @@ public class PostController {
         {
             ContentTF.setText(post.getContent());
         }
+        if(post.getLikes().contains(UserManager.curr_user))
+        {
+            LikeIcon.setImage(LikeOn);
+        }else
+        {
+            LikeIcon.setImage(LikeOff);
+        }
+        LikeLabel.setText("Like " + Curr_post.getLikes().size());
+        CommentLabel.setText("Comment " + Curr_post.getComments().size());
     }
     public void setLikes(ActionEvent e)
     {
         if(Curr_post.getLikes().contains(UserManager.curr_user))
         {
             Curr_post.removeLike(UserManager.curr_user);
+            LikeIcon.setImage(LikeOff);
+
         }else
         {
             Curr_post.addLike(UserManager.curr_user);
+            LikeIcon.setImage(LikeOn);
         }
         LikeLabel.setText("Like " + Curr_post.getLikes().size());
         System.out.println("liked");
@@ -87,6 +112,6 @@ public class PostController {
             PostController postController = fxmlLoaderPost.getController();
             postController.setData(Curr_post,true);
         }
-        postComments.setPostPanel(rootPost,Curr_post);
+        postComments.setPostPanel(rootPost,Curr_post,this);
     }
 }

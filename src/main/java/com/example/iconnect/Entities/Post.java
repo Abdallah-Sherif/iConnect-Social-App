@@ -111,7 +111,7 @@ public class Post implements Serializable{
     public void addLike(User user) {
         if (!likes.contains(user)) {
             likes.add(user);
-            sendLikeNotification(user);
+            //sendLikeNotification(user);
         }
         
     }

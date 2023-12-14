@@ -46,49 +46,41 @@
             <Separator layoutX="10.0" layoutY="85.0" opacity="0.5" prefWidth="200.0" />
             <VBox prefHeight="72.0" prefWidth="579.0">
                <children>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="579.0">
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="579.0">
                      <children>
-                        <Label prefHeight="27.0" prefWidth="300.0" text="Likes" textFill="#cccccc">
+                        <Label fx:id="LikeLabel" prefHeight="27.0" prefWidth="112.0" text="Likes" textFill="#cccccc">
                            <font>
                               <Font name="TimeBurner Bold" size="18.0" />
                            </font>
                         </Label>
-                        <HBox prefHeight="30.0" prefWidth="226.0">
-                           <children>
-                              <Label prefHeight="27.0" prefWidth="127.0" text="Comments" textFill="#cccccc">
-                                 <font>
-                                    <Font name="TimeBurner Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="27.0" prefWidth="97.0" text="Shares" textFill="#cccccc">
-                                 <font>
-                                    <Font name="TimeBurner Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
+                        <Separator opacity="0.0" orientation="VERTICAL" prefHeight="27.0" prefWidth="261.0" />
+                        <Label fx:id="CommentLabel" prefHeight="27.0" prefWidth="112.0" text="Comments" textFill="#cccccc">
+                           <font>
+                              <Font name="TimeBurner Bold" size="18.0" />
+                           </font>
+                        </Label>
                      </children>
                   </HBox>
                   <Separator opacity="0.5" prefHeight="0.0" prefWidth="579.0" />
                   <HBox alignment="CENTER" prefHeight="512.0" prefWidth="579.0">
                      <children>
-                        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="150.0">
+                        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="215.0">
                            <children>
-                              <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="LikeIcon" fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@like.png" />
                                  </image>
                               </ImageView>
                               <Separator opacity="0.0" orientation="VERTICAL" prefHeight="62.0" prefWidth="15.0" />
-                              <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="120.0" style="-fx-background-radius: 100;" text="Like">
+                              <Button mnemonicParsing="false" onAction="#setLikes" prefHeight="39.0" prefWidth="120.0" style="-fx-background-radius: 100;" text="Like">
                                  <font>
                                     <Font name="TimeBurner Bold" size="18.0" />
                                  </font>
                               </Button>
                            </children>
                         </HBox>
-                        <Separator opacity="0.0" orientation="VERTICAL" prefHeight="62.0" prefWidth="50.0" />
-                        <HBox alignment="CENTER" layoutX="250.0" layoutY="10.0" prefHeight="62.0" prefWidth="150.0">
+                        <Separator opacity="0.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="128.0" />
+                        <HBox alignment="CENTER" layoutX="250.0" layoutY="10.0" prefHeight="42.0" prefWidth="165.0">
                            <children>
                               <ImageView fitHeight="30.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -104,21 +96,6 @@
                            </children>
                         </HBox>
                         <Separator layoutX="222.0" layoutY="10.0" opacity="0.0" orientation="VERTICAL" prefHeight="62.0" prefWidth="50.0" />
-                        <HBox alignment="CENTER" layoutX="310.0" layoutY="10.0" prefHeight="62.0" prefWidth="150.0">
-                           <children>
-                              <ImageView fitHeight="34.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@send.png" />
-                                 </image>
-                              </ImageView>
-                              <Separator opacity="0.0" orientation="VERTICAL" prefHeight="62.0" prefWidth="15.0" />
-                              <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="120.0" style="-fx-background-radius: 100;" text="Share">
-                                 <font>
-                                    <Font name="TimeBurner Bold" size="18.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </HBox>
                      </children>
                   </HBox>
                </children>

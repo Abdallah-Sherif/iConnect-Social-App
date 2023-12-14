@@ -96,8 +96,6 @@ public class PostCreationGUI implements Initializable {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Choose Profile Picture");
 
-        // ... other file chooser setup code ...
-
         File selectedFile = fileChooser.showOpenDialog(null);
 
         if (selectedFile != null) {
@@ -114,7 +112,7 @@ public class PostCreationGUI implements Initializable {
                 PostImageView.setImage(image);
                 currentImagePath = to;
             } catch (IOException ex) {
-                ex.printStackTrace(); // Handle the exception appropriately
+                ex.printStackTrace();
             }
         }
         return ImageUrl;
