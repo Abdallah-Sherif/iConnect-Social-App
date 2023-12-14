@@ -13,10 +13,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Separator;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,7 +36,7 @@ public class PostComments {
     private Parent postPanel;
     private Post current_post;
     @FXML
-    private AnchorPane PostSelectedPanel;
+    private HBox PostSelectedPanel;
     private PostController curr_post_controller;
     public void setPostPanel(Parent postPanel,Post post, PostController curr_post_controller) {
         this.curr_post_controller = curr_post_controller;

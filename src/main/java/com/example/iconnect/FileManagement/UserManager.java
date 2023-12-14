@@ -8,6 +8,8 @@ import com.example.iconnect.Entities.Comment;
 import com.example.iconnect.Entities.Notification;
 import com.example.iconnect.Entities.Post;
 import com.example.iconnect.Entities.User;
+import javafx.scene.image.Image;
+
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,6 +26,7 @@ import java.util.List;
 public class UserManager {
     public static List<User> users = new ArrayList<>();
     public static User curr_user;
+    public static Image curr_user_profile;
     protected static String usersFilePath = "users.dat";
     public UserManager() {
         

@@ -9,11 +9,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,10 +29,15 @@ public class HomePage implements Initializable {
 
     @FXML
     VBox PostCardLayout;
+    @FXML
+    Circle ProfileImageView;
+    @FXML
+    Label UsernameLabel;
     private List<Post> recentPosts = new ArrayList<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        UsernameLabel.setText(UserManager.curr_user.getUsername());
         recentPosts.addAll(UserManager.getPostsToLoad());
         Collections.shuffle(recentPosts);
         try{

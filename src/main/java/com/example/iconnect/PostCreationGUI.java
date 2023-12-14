@@ -100,8 +100,13 @@ public class PostCreationGUI implements Initializable {
 
         if (selectedFile != null) {
             try {
+                String projectDirectory = System.getProperty("user.dir");
+
+                // Define the relative path to the "PostImages" folder
+                String relativePath = "src/main/resources/com/example/iconnect/PostImages/";
+
                 Path from = Paths.get(selectedFile.toURI());
-                Path to = Paths.get("E:\\Java Projects\\iConnect\\src\\main\\resources\\com\\example\\iconnect\\PostImages\\" +selectedFile.getName());
+                Path to = Paths.get(projectDirectory, relativePath, selectedFile.getName());
                 if(!Files.exists(to))
                 {
                     Files.copy(from, to);

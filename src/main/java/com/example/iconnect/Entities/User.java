@@ -22,6 +22,7 @@ public class User implements Serializable {
     private List<User> receivedFriendRequests;
     private List<Notification> CurrentNotifications;
     public List<Post> posts= new ArrayList<>();
+    private String ProfileImagePath;
    
     
     public List<Notification> getCurrentNotifications() {
@@ -32,7 +33,7 @@ public class User implements Serializable {
         CurrentNotifications.add(newNotification);
     }
 
-    public User(String username,String password,String Email,String Gender,LocalDate BirthDate) {
+    public User(String username,String password,String Email,String Gender,LocalDate BirthDate,String ImagePath) {
         this.username = username;
         this.password = password;
         this.email = Email;
@@ -41,6 +42,7 @@ public class User implements Serializable {
         this.friends = new ArrayList<>();
         this.sentFriendRequests = new ArrayList<>();
         this.receivedFriendRequests = new ArrayList<>();
+        ProfileImagePath = ImagePath;
     }
 
     public String getUsername() {
@@ -135,5 +137,13 @@ public class User implements Serializable {
     
     Object getNotifications() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public String getProfileImagePath() {
+        return ProfileImagePath;
+    }
+
+    public void setProfileImagePath(String profileImagePath) {
+        ProfileImagePath = profileImagePath;
     }
 }

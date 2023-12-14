@@ -44,7 +44,7 @@
 #LoginBTN:hover{
     -fx-skin : 'com.example.iconnect.MyButtonSkin';
 }
-#SignUpBTN{
+#SignUpBTN, #SelectImageBTN{
     -fx-background-image: url("RocketIcon.png");
     -fx-background-size: contain;
     -fx-background-position: center;
@@ -53,7 +53,7 @@
     -fx-border-color: Black;
     -fx-border-width: 3px;
 }
-#SignUpBTN:hover{
+#SignUpBTN:hover,#SelectImageBTN:hover{
     -fx-skin : 'com.example.iconnect.MyButtonSkin';
 }
 .radio-button .radio {

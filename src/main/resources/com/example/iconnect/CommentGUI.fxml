@@ -21,6 +21,17 @@
                   <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
                </HBox.margin>
             </ImageView>
+            <Label fx:id="LikeCounter" prefWidth="40.0" text="Likes" textFill="#cccccc">
+               <font>
+                  <Font name="TimeBurner" size="18.0" />
+               </font>
+            </Label>
+            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="18.0" />
+            <ImageView fx:id="LikeView" fitHeight="59.0" fitWidth="34.0" onMouseClicked="#AddLike" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@like.png" />
+               </image>
+            </ImageView>
             <VBox alignment="CENTER">
                <HBox.margin>
                   <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
