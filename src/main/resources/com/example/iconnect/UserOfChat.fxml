@@ -21,7 +21,7 @@
                   <Insets left="40.0" />
                </HBox.margin>
                <image>
-                  <Image url="@../../../../../../../../../../Downloads/Social_Media_free_vector_icons_designed_by_Eucalyp-removebg-preview.png" />
+                  <Image url="@Social_Media_free_vector_icons_designed_by_Eucalyp-removebg-preview.png" />
                </image>
             </ImageView>
             <Separator orientation="VERTICAL" prefHeight="120.0" prefWidth="63.0" style="-fx-background-color: Transparent;" />
