@@ -1,9 +1,10 @@
 package com.example.iconnect.Entities;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Message {
+public class Message implements Serializable {
     private User sender;
     private String currentDateTime;
     private String content;
