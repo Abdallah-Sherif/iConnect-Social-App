@@ -7,6 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
@@ -23,7 +24,12 @@
          <children>
             <ScrollPane hbarPolicy="NEVER" layoutX="374.0" layoutY="56.0" prefHeight="518.0" prefWidth="578.0" style="-fx-background-color: #242526;" vbarPolicy="NEVER">
                <content>
-                  <VBox fx:id="VprofilrPost" alignment="CENTER" prefWidth="578.0" style="-fx-background-color: #18191a;" />
+                  <StackPane>
+                     <children>
+                        <Pane prefHeight="520.0" prefWidth="200.0" />
+                        <VBox fx:id="VprofilrPost" alignment="CENTER" prefWidth="578.0" style="-fx-background-color: #18191a;" />
+                     </children>
+                  </StackPane>
                </content>
             </ScrollPane>
             <Pane layoutX="14.0" layoutY="69.0" prefHeight="305.0" prefWidth="337.0" style="-fx-background-color: #3A3B3C; -fx-background-radius: 50;">
@@ -60,9 +66,14 @@
                   <Font name="TimeBurner Bold" size="26.0" />
                </font>
             </Label>
-            <ScrollPane layoutX="964.0" layoutY="135.0" prefHeight="435.0" prefWidth="298.0" style="-fx-background-color: #3A3B3C;">
+            <ScrollPane hbarPolicy="NEVER" layoutX="964.0" layoutY="135.0" prefHeight="435.0" prefWidth="298.0" vbarPolicy="NEVER">
                <content>
-                  <VBox prefWidth="578.0" style="-fx-background-color: #3A3B3C; -fx-background-radius: 50;" />
+                  <StackPane>
+                     <children>
+                        <Pane prefHeight="435.0" prefWidth="298.0" />
+                        <VBox prefWidth="297.0" style="-fx-background-color: #18191a;" />
+                     </children>
+                  </StackPane>
                </content>
             </ScrollPane>
             <Button fx:id="AddFriendBTN" layoutX="1056.0" layoutY="33.0" mnemonicParsing="false" onAction="#sendFriend" text="Add friend!">

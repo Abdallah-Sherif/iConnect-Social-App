@@ -33,13 +33,13 @@ public class NotificationBar implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
-            for (FriendRequestNotification notification : UserManager.curr_user.getCurrentNotifications()) {
+            for (Notification notification : UserManager.curr_user.getCurrentNotifications()) {
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 Parent root;
                 fxmlLoader.setLocation(getClass().getResource("NotificationPanel.fxml"));
                 root = fxmlLoader.load();
                 NotificationPanel notificationPanel = fxmlLoader.getController();
-                notificationPanel.setData(notification);
+                notificationPanel.setData(notification,root,NotificationVBox);
                 NotificationVBox.getChildren().add(root);
             }
         }catch (IOException e)

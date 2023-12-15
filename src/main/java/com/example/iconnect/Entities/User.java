@@ -32,13 +32,10 @@ public class User implements Serializable {
     private String ProfileImagePath;
 
 
-    public List<FriendRequestNotification> getCurrentNotifications() {
-        return currentRequestNotifications;
+    public List<Notification> getCurrentNotifications() {
+        return CurrentNotifications;
     }
     //****
-    public void addNotifications(FriendRequestNotification newNotification) {
-        currentRequestNotifications.add(newNotification);
-    }
 
     public void addNotifications2(TaggedUserNotification newNotification) {
         taggedUserNotifications.add(newNotification);
@@ -47,7 +44,6 @@ public class User implements Serializable {
     public void addNotifications(Notification newNotification) {
         CurrentNotifications.add(newNotification);
     }
-
     public User(String username,String password,String Email,String Gender,LocalDate BirthDate,String ImagePath) {
         this.username = username;
         this.password = password;

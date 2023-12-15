@@ -7,9 +7,9 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.NotificationPanel">
+<BorderPane fx:id="NotificationBox" onMouseClicked="#DeleteNotification" style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.NotificationPanel">
    <center>
-      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="350.0" style="-fx-background-color: #3a3b3c; -fx-background-radius: 25;">
+      <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#DeleteNotification" prefHeight="150.0" prefWidth="350.0" style="-fx-background-color: #3a3b3c; -fx-background-radius: 25;">
          <children>
             <Circle fx:id="ProfileImageView" fill="DODGERBLUE" radius="37.0" stroke="BLACK" strokeType="INSIDE">
                <HBox.margin>
