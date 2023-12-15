@@ -1,7 +1,6 @@
 package com.example.iconnect;
 
 import com.example.iconnect.Entities.Post;
-import com.example.iconnect.Entities.User;
 import com.example.iconnect.FileManagement.UserManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,8 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.ImagePattern;
@@ -75,6 +73,16 @@ public class HomePage implements Initializable {
     }
     public void GoToCreatePostImage(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateImage.fxml"));
+        StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
+        SceneTransitions.doFadeIn(StartUpPane,root,true);
+    }
+    public void GoToProfilePage(MouseEvent e) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root;
+        fxmlLoader.setLocation(getClass().getResource("profile.fxml"));
+        root = fxmlLoader.load();
+        ProfilePage profilePage = fxmlLoader.getController();
+        profilePage.setData(UserManager.curr_user);
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
         SceneTransitions.doFadeIn(StartUpPane,root,true);
     }
