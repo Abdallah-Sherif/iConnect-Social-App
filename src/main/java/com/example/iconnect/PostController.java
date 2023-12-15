@@ -16,6 +16,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import com.example.iconnect.Entities.Post;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,7 +26,7 @@ import java.util.ResourceBundle;
 public class PostController implements Initializable {
 
     @FXML
-    ImageView ProfileImage;
+    Circle ProfileImage;
     @FXML
     Label UsernameTF;
     @FXML
@@ -53,6 +55,8 @@ public class PostController implements Initializable {
         this.isImage = isImage;
         Curr_post = post;
         UsernameTF.setText(post.getAuthor().getUsername());
+        Image imagee = new Image(getClass().getResourceAsStream(post.getAuthor().getProfileImagePath()));
+        ProfileImage.setFill(new ImagePattern(imagee));
         if(isImage)
         {
             Image image = new Image(getClass().getResourceAsStream(post.getImageData()));
