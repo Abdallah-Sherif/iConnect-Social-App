@@ -8,6 +8,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +19,7 @@ public class CommentController implements Initializable {
     private Label ContentL;
 
     @FXML
-    private ImageView UserImageV;
+    private Circle UserImageV;
 
     @FXML
     private Label UsernameL;
@@ -33,6 +35,8 @@ public class CommentController implements Initializable {
         current_comment = comment;
         ContentL.setText(comment.getContent());
         UsernameL.setText(comment.getUser().getUsername());
+        UserImageV.setFill(new ImagePattern(UserManager.curr_user_profile));
+        LikeCounter.setText("Like " + current_comment.getLikes().size());
         if(comment.getLikes().contains(UserManager.curr_user))
         {
             LikeView.setImage(LikeOn);

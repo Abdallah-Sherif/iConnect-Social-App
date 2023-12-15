@@ -28,13 +28,7 @@ public class UserManager {
     public static User curr_user;
     public static Image curr_user_profile;
     protected static String usersFilePath = "users.dat";
-    public UserManager() {
-        
-    }
-    
-    
-    
-    
+
     public static void AddUser(User user)
     {
         if(!users.contains(user))
