@@ -135,7 +135,7 @@ public class UserManager {
 
         // Add the current user to the friend's friend list
         Reciever.getFriends().add(Sender);
-        sendAcceptNotification(Reciever,Sender);
+        sendAcceptNotification(Sender,Reciever);
 
         // Send a friend confirmation notification to the friend
         //****
@@ -157,15 +157,14 @@ public class UserManager {
     
     public static void sendRequestNotification(User sender,User reciever)
     {
-        FriendRequestNotification notification=new FriendRequestNotification(sender.getUsername()+" send you a friend request",sender);
-       reciever.addNotifications(notification);
+        Notification notification = new FriendRequestNotification(sender.getUsername()+" send you a friend request",sender);
+        reciever.addNotifications(notification);
     }
       
        
     public static void sendAcceptNotification(User sender,User reciever)
     {
-        FriendRequestNotification notification=new FriendRequestNotification(reciever.getUsername()+" accepted your request",sender);
-       //****
+        Notification notification = new FriendRequestNotification(reciever.getUsername()+" accepted your request",reciever);
        sender.addNotifications(notification);
     }
     

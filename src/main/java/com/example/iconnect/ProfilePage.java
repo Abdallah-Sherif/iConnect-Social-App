@@ -123,17 +123,6 @@ public class ProfilePage implements Initializable {
 
             AddFriendBTN.setDisable(true);
             AddFriendBTN.setVisible(false);
-        }else if(!UserManager.curr_user.getFriends().contains(profileUser))
-        {
-            profileOwner = ProfileOwner.UnknownUser;
-            AcceptFriendBTN.setDisable(true);
-            AcceptFriendBTN.setVisible(false);
-
-            DeclineFriendBTN.setDisable(true);
-            DeclineFriendBTN.setVisible(false);
-
-            AddFriendBTN.setDisable(false);
-            AddFriendBTN.setVisible(true);
         }else if(UserManager.curr_user.getSentFriendRequests().contains(profileUser))
         {
             profileOwner = ProfileOwner.FriendRecUser;
@@ -146,7 +135,18 @@ public class ProfilePage implements Initializable {
             AddFriendBTN.setDisable(true);
             AddFriendBTN.setVisible(true);
             AddFriendBTN.setText("Friend Request Sent!");
+        }
+        else if(!UserManager.curr_user.getFriends().contains(profileUser))
+        {
+            profileOwner = ProfileOwner.UnknownUser;
+            AcceptFriendBTN.setDisable(true);
+            AcceptFriendBTN.setVisible(false);
 
+            DeclineFriendBTN.setDisable(true);
+            DeclineFriendBTN.setVisible(false);
+
+            AddFriendBTN.setDisable(false);
+            AddFriendBTN.setVisible(true);
         }
     }
 
