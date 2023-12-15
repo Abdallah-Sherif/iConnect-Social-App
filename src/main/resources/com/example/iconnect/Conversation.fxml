@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
@@ -16,7 +15,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="735.0" fitWidth="1299.0" layoutX="-4.0" layoutY="-3.0" pickOnBounds="true">
@@ -28,7 +26,7 @@
          <children>
             <TextField layoutX="45.0" layoutY="11.0" opacity="0.73" prefHeight="60.0" prefWidth="497.0">
                <font>
-                  <Font name="TimeBurner Bold" size="17.0" />
+                  <Font name="TimeBurner Bold" size="18.0" />
                </font>
             </TextField>
             <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="553.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
@@ -46,7 +44,6 @@
             <Glow />
          </effect>
       </ImageView>
-      <Button fx:id="BackArrow" layoutX="24.0" layoutY="38.0" mnemonicParsing="false" opacity="0.0" prefHeight="39.0" prefWidth="82.0" />
       <ScrollPane layoutX="303.0" layoutY="124.0" prefHeight="496.0" prefWidth="664.0" style="-fx-background-color: Transparent;">
          <content>
             <VBox prefWidth="642.0" style="-fx-background-color: #4D4E4F;" />
@@ -87,5 +84,13 @@
             </Pane>
          </children>
       </HBox>
+      <ImageView fitHeight="64.0" fitWidth="100.0" layoutX="968.0" layoutY="639.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../Downloads/pngtree-add-contact-icon-png-image_4479687-removebg-preview.png" />
+         </image>
+         <effect>
+            <Glow />
+         </effect>
+      </ImageView>
    </children>
 </Pane>

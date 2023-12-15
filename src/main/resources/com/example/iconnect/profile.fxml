@@ -81,13 +81,13 @@
                </font>
             </Button>
          </children></Pane>
-      <Circle fx:id="CircleImageView" fill="#f0f1f2" layoutX="440.0" layoutY="119.0" radius="77.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="CircleImageView" fill="#f0f1f2" layoutX="437.0" layoutY="116.0" radius="77.0" stroke="BLACK" strokeType="INSIDE" />
       <Label fx:id="nameLabel" layoutX="529.0" layoutY="96.0" prefHeight="66.0" prefWidth="507.0" text="Name" textFill="#d9d9d9">
          <font>
             <Font name="TimeBurner Bold" size="45.0" />
          </font>
       </Label>
-      <ImageView fitHeight="129.0" fitWidth="283.0" layoutX="45.0" layoutY="43.0" onMouseClicked="#returnToHomeepage" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="76.0" fitWidth="250.0" layoutX="45.0" layoutY="43.0" onMouseClicked="#returnToHomeepage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@iConnect.png" />
          </image>

@@ -2,12 +2,15 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
@@ -24,10 +27,26 @@
             </DropShadow>
          </effect>
       </ImageView>
-      <Label layoutX="569.0" layoutY="20.0" text="Chats" textFill="WHITE">
+      <Label layoutX="558.0" layoutY="20.0" text="Chats">
          <font>
             <Font name="TimeBurner Bold" size="64.0" />
          </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.5263158082962036" green="0.46627679467201233" blue="0.3547758162021637" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
       </Label>
       <ScrollPane hbarPolicy="NEVER" layoutX="355.0" layoutY="119.0" prefHeight="602.0" prefWidth="615.0" style="-fx-background-color: Transparent;" vbarPolicy="NEVER">
          <content>
@@ -38,6 +57,14 @@
          <image>
             <Image url="@../../../../../../../../../../Downloads/202-2022960_left-white-arrow-icon-hd-png-download-removebg-preview%20(1).png" />
          </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="100.0" layoutX="755.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../../Downloads/fokaspokas181200305-removebg-preview.png" />
+         </image>
+         <effect>
+            <Blend mode="MULTIPLY" />
+         </effect>
       </ImageView>
    </children>
 </AnchorPane>
