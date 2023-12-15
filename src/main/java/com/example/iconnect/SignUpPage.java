@@ -18,6 +18,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
@@ -26,6 +27,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 
 
@@ -126,13 +128,21 @@ public class SignUpPage {
         }
         User NewUser = new User(UserName,Pass,EmailTF.getText(),gender,userBirthDate,ImageUrl);
         UserManager.AddUser(NewUser);
+
+        UserManager.saveUsers();
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Logout");
+        alert.setHeaderText("Restart");
+        alert.setContentText("this program will now restart");
+        if(alert.showAndWait().get() == ButtonType.OK || alert.showAndWait().get() == ButtonType.CANCEL)
+        {
+            Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+            stage.close();
+        }
         Parent root = FXMLLoader.load(this.getClass().getResource("LoginPage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
         SceneTransitions.doFadeIn(StartUpPane,root,true);
-        //switchToPage("HomePage");
-        //homepage.initializeHomepage();
-        //CureentUser = NewUser;
-        //homepage.GetAllPosts();
+
     }
     public void getImageUrl(ActionEvent e) {
         FileChooser fileChooser = new FileChooser();
@@ -145,7 +155,7 @@ public class SignUpPage {
                 String projectDirectory = System.getProperty("user.dir");
 
                 // Define the relative path to the "PostImages" folder
-                String relativePath = "src/main/resources/com/example/iconnect/ProfileImages/";
+                String relativePath = "src/main/resources/com/example/iconnect/ProfileImages";
 
                 Path from = Paths.get(selectedFile.toURI());
                 Path to = Paths.get(projectDirectory, relativePath, selectedFile.getName());
@@ -155,6 +165,7 @@ public class SignUpPage {
                     alreadyExists = false;
                 }
                 ImageUrl = "ProfileImages/" + selectedFile.getName();
+                System.out.println(ImageUrl);
                 Image image = new Image(selectedFile.toURI().toString());
                 ProfileImageView.setFill(new ImagePattern(image));
                 currentImagePath = to;

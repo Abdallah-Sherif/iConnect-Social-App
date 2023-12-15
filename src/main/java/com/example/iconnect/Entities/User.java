@@ -20,13 +20,28 @@ public class User implements Serializable {
     private List<User> friends;
     private List<User> sentFriendRequests;
     private List<User> receivedFriendRequests;
-    private List<Notification> CurrentNotifications;
+    private List<Notification> CurrentNotifications = new ArrayList<>();
+
+    public List<FriendRequestNotification> getCurrentRequestNotifications() {
+        return currentRequestNotifications;
+    }
+
+    private List<FriendRequestNotification> currentRequestNotifications = new ArrayList<>();
+    private List<TaggedUserNotification> taggedUserNotifications = new ArrayList<>();
     public List<Post> posts= new ArrayList<>();
     private String ProfileImagePath;
-   
-    
-    public List<Notification> getCurrentNotifications() {
-        return CurrentNotifications;
+
+
+    public List<FriendRequestNotification> getCurrentNotifications() {
+        return currentRequestNotifications;
+    }
+    //****
+    public void addNotifications(FriendRequestNotification newNotification) {
+        currentRequestNotifications.add(newNotification);
+    }
+
+    public void addNotifications2(TaggedUserNotification newNotification) {
+        taggedUserNotifications.add(newNotification);
     }
     //****
     public void addNotifications(Notification newNotification) {
@@ -43,6 +58,9 @@ public class User implements Serializable {
         this.sentFriendRequests = new ArrayList<>();
         this.receivedFriendRequests = new ArrayList<>();
         ProfileImagePath = ImagePath;
+        this.CurrentNotifications = new ArrayList<>();
+        this.currentRequestNotifications = new ArrayList<>();
+        this.taggedUserNotifications = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -87,14 +105,6 @@ public class User implements Serializable {
     
     //*************************************************************************
     //button
-    public void sendPostNotification()
-    {
-       Notification notification=new Notification(this.username+" send a post");
-       for(User friend:friends)
-       {
-            friend.CurrentNotifications.add(notification);
-       }
-    }
     public List<Post> getPosts() {
         return posts;
     }

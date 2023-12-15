@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -57,6 +58,10 @@ public class LoginPage {
         {
             System.out.println("not a user");
         }
+    }
+    public void setImageData()
+    {
+
     }
     public void setSignUpBTN(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("SignUpPage.fxml"));

@@ -31,13 +31,6 @@ public class Post implements Serializable{
     
     private List<User> likes = new ArrayList<>();
 
-    public List<User> getTaggedUsers() {
-        return taggedUsers;
-    }
-
-    public void setTaggedUsers(List<User> taggedUsers) {
-        this.taggedUsers = taggedUsers;
-    }
 
     private List<User> taggedUsers = new ArrayList<>();
     private List<Comment> comments = new ArrayList<>();
@@ -116,21 +109,25 @@ public class Post implements Serializable{
         
     }
     //button
-       public void sendLikeNotification(User friend)
-    {
-       Notification notification=new Notification(friend.getUsername()+" added like to your post");
-       author.addNotifications(notification);
-       
+    public List<User> getTaggedUsers() {
+        return taggedUsers;
     }
-       
-    //comment textbox
-       public void sendCommentNotification(User friend,Comment comment)
-    {
-       Notification notification=new Notification(friend.getUsername()+" "+comment.getContent());
-       author.addNotifications(notification);
+
+    public void setTaggedUsers(List<User> taggedUsers) {
+        this.taggedUsers = taggedUsers;
+        for (User tagged:taggedUsers)
+        {
+            sendTaggedNotification(this.author,tagged);
+        }
     }
-    
-    
+
+    public void sendTaggedNotification(User author,User tagged){
+        Notification notification=new TaggedUserNotification(author.getUsername()+" tagged you in post",author);
+        tagged.addNotifications2((TaggedUserNotification)notification);
+    }
+
+
+
     public void removeLike(User user) {
         likes.remove(user);
     }

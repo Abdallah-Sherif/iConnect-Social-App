@@ -4,10 +4,7 @@
  */
 package com.example.iconnect.FileManagement;
 
-import com.example.iconnect.Entities.Comment;
-import com.example.iconnect.Entities.Notification;
-import com.example.iconnect.Entities.Post;
-import com.example.iconnect.Entities.User;
+import com.example.iconnect.Entities.*;
 import javafx.scene.image.Image;
 
 import java.io.FileInputStream;
@@ -31,14 +28,16 @@ public class UserManager {
 
     public static void AddUser(User user)
     {
-        if(!users.contains(user))
-        {
-            users.add(user);
-        }
+        users.add(user);
     }
     public void ClearUsers()
     {
         users.clear();
+    }
+
+    public static void setCurr_user_profile(Image image)
+    {
+        curr_user_profile = image;
     }
     
      public static void saveUsers() {
@@ -96,14 +95,7 @@ public class UserManager {
         }
         return null;
     }
-    public void DisplayFriends(User current)
-    {
-        for(User currentFriend : current.getFriends())
-        {
-            System.out.println(current.getUsername() + " is friends with " + currentFriend.getUsername());
-        }
-    }
-    public void SendFriendRequest(User Sender, User Reciever) {
+    public static void SendFriendRequest(User Sender, User Reciever) {
         // Check if the users are already friends
         if (Sender.getFriends().contains(Reciever)) {
             System.out.println("Users are already friends");
@@ -120,10 +112,11 @@ public class UserManager {
 
         // Add the current user to the friend's friend list
         Sender.getSentFriendRequests().add(Reciever);
+        sendRequestNotification(Sender,Reciever);
 
-        sendRequestNotification( Sender, Reciever); 
+        //sendRequestNotification( Sender, Reciever);
     }
-     public void acceptFriendRequest(User Sender, User Reciever) {
+     public static void acceptFriendRequest(User Sender, User Reciever) {
         // Check if the friend request exists
         if (!Sender.getSentFriendRequests().contains(Reciever)) {
             System.out.println("Friend request not found");
@@ -142,16 +135,14 @@ public class UserManager {
 
         // Add the current user to the friend's friend list
         Reciever.getFriends().add(Sender);
+        sendAcceptNotification(Reciever,Sender);
 
         // Send a friend confirmation notification to the friend
-
-        DisplayFriends(Sender);
-        DisplayFriends(Reciever);
         //****
-        sendAcceptNotification(Sender,Reciever);
+        //sendAcceptNotification(Sender,Reciever);
     }
 
-    public void declineFriendRequest(User Sender, User Reciever) {
+    public static void declineFriendRequest(User Sender, User Reciever) {
         // Check if the friend request exists
         if (!Reciever.getReceivedFriendRequests().contains(Sender)) {
             System.out.println("Friend request not found");
@@ -164,16 +155,16 @@ public class UserManager {
 
     }
     
-    public void sendRequestNotification(User sender,User reciever)
+    public static void sendRequestNotification(User sender,User reciever)
     {
-       Notification notification=new Notification(sender.getUsername()+" send you a friend request");
+        FriendRequestNotification notification=new FriendRequestNotification(sender.getUsername()+" send you a friend request",sender);
        reciever.addNotifications(notification);
     }
       
        
-       public void sendAcceptNotification(User sender,User reciever)
+    public static void sendAcceptNotification(User sender,User reciever)
     {
-       Notification notification=new Notification(reciever.getUsername()+" accepted your request");
+        FriendRequestNotification notification=new FriendRequestNotification(reciever.getUsername()+" accepted your request",sender);
        //****
        sender.addNotifications(notification);
     }

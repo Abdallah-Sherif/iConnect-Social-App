@@ -34,6 +34,10 @@ public class Main extends Application {
             }
         });
         UserManager.loadUsers();
+        for(User user: UserManager.users)
+        {
+            System.out.println(user.getCurrentNotifications());
+        }
     }
 
     public static void main(String[] args) {

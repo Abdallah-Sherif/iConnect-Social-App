@@ -3,21 +3,24 @@ import java.io.Serializable;
 import com.example.iconnect.Entities.User;
 import java.time.LocalDateTime;
 
-public class Notification implements Serializable{
+public abstract class Notification implements Serializable{
 
-    private String message;
-    private LocalDateTime timestamp;
+     protected String message;
+     LocalDateTime timestamp;
 
-    public Notification(String message) {
+    public User getSender() {
+        return sender;
+    }
+
+    User sender;
+
+    public Notification(String message,User sender) {
         this.message = message;
         this.timestamp = LocalDateTime.now();
+        this.sender = sender;
     }
 
-    public String getMessage() {
-        return message;
-    }
-    
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
+    public abstract String getMessage();
+
+    public abstract LocalDateTime getTimestamp() ;
 }

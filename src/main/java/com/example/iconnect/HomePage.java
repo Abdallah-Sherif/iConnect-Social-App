@@ -17,11 +17,9 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class HomePage implements Initializable {
 
@@ -35,9 +33,6 @@ public class HomePage implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Image image = new Image(getClass().getResourceAsStream(UserManager.curr_user.getProfileImagePath()));
-        ProfileImageView.setFill(new ImagePattern(image));
-        UserManager.curr_user_profile = image;
         UsernameLabel.setText(UserManager.curr_user.getUsername());
         recentPosts.addAll(UserManager.getPostsToLoad());
         Collections.shuffle(recentPosts);
@@ -65,7 +60,19 @@ public class HomePage implements Initializable {
         {
             e.printStackTrace();
         }
+        InputStream inputStream = getClass().getResourceAsStream(UserManager.curr_user.getProfileImagePath());
+        if(inputStream != null)
+        {
+            Image image = new Image(inputStream);
+            ProfileImageView.setFill(new ImagePattern(image));
+            UserManager.curr_user_profile = image;
+        }else
+        {
+            Image image = new Image(getClass().getResourceAsStream("user.png"));
+            ProfileImageView.setFill(new ImagePattern(image));
+        }
     }
+
     public void GoToCreatePostText(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateText.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
@@ -85,5 +92,29 @@ public class HomePage implements Initializable {
         profilePage.setData(UserManager.curr_user);
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
         SceneTransitions.doFadeIn(StartUpPane,root,true);
+    }
+    public void OpenSearchPanel(MouseEvent e) throws IOException {
+        StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root;
+        if(StartUpPane.getChildren().size() >= 2)
+        {
+            return;
+        }
+        fxmlLoader.setLocation(getClass().getResource("SearchResultsGUI.fxml"));
+        root = fxmlLoader.load();
+        StartUpPane.getChildren().add(root);
+    }
+    public void openNotificationPanel(MouseEvent e) throws IOException {
+        StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        Parent root;
+        if(StartUpPane.getChildren().size() >= 2)
+        {
+            return;
+        }
+        fxmlLoader.setLocation(getClass().getResource("NotificationBar.fxml"));
+        root = fxmlLoader.load();
+        StartUpPane.getChildren().add(root);
     }
 }

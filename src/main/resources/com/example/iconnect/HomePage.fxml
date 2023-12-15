@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -21,9 +20,9 @@
    <top>
       <HBox fx:id="HBoxTop" alignment="CENTER" prefHeight="70.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="110.0">
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="191.0">
                <children>
-                  <ImageView fitHeight="57.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="41.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@iConnect.png" />
                      </image>
@@ -33,9 +32,9 @@
                   </ImageView>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="392.0">
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="426.0">
                <children>
-                  <ImageView fitHeight="37.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="SearchBTN" fitHeight="37.0" fitWidth="39.0" onMouseClicked="#OpenSearchPanel" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@SearchIcon.png" />
                      </image>
@@ -43,12 +42,12 @@
                         <Insets top="4.0" />
                      </HBox.margin>
                   </ImageView>
-                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="48.0" prefWidth="15.0" />
-                  <TextField fx:id="SearchBar" alignment="CENTER" prefHeight="34.0" prefWidth="297.0">
-                     <HBox.margin>
-                        <Insets top="4.0" />
-                     </HBox.margin>
-                  </TextField>
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="70.0" prefWidth="14.0" />
+                  <Label text="Search!" textFill="#cccccc">
+                     <font>
+                        <Font name="TimeBurner Bold" size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="227.0">
@@ -62,6 +61,11 @@
                   <Circle fx:id="ProfileImageView" fill="DODGERBLUE" onMouseClicked="#GoToProfilePage" radius="31.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </HBox>
+            <ImageView fitHeight="57.0" fitWidth="61.0" onMouseClicked="#openNotificationPanel" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@notification.png" />
+               </image>
+            </ImageView>
          </children>
          <BorderPane.margin>
             <Insets />

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox fx:id="PostSelectedPanel" alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@PostCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.SearchResultsGUI">
+   <children>
+      <VBox onMouseClicked="#returnToHomepage" prefHeight="200.0" prefWidth="500.0" />
+      <VBox alignment="CENTER" maxHeight="600.0" maxWidth="649.0" prefHeight="600.0" prefWidth="649.0" style="-fx-background-color: #242526; -fx-background-radius: 20;">
+         <children>
+            <HBox>
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="SearchBar" prefHeight="40.0" prefWidth="495.0" promptText="Search For Users" style="-fx-background-radius: 100px;">
+                     <font>
+                        <Font name="TimeBurner Bold" size="18.0" />
+                     </font>
+                  </TextField>
+                  <ImageView fx:id="SearchBTN" fitHeight="42.0" fitWidth="60.0" onMouseClicked="#Search" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@SearchIcon.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets left="35.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefWidth="649.0">
+               <children>
+                  <ScrollPane hbarPolicy="NEVER" maxHeight="500.0" maxWidth="649.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="649.0" style="-fx-background-color: Transparent; -fx-focus-color: Transparent;" vbarPolicy="NEVER">
+                     <content>
+                        <VBox fx:id="SearchResultsVBox" alignment="TOP_CENTER" fillWidth="false" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="648.0" style="-fx-background-color: #242526;">
+                           <children>
+                              <Separator maxWidth="650.0" opacity="0.0" orientation="VERTICAL" prefHeight="39.0" prefWidth="0.0" />
+                              <VBox fx:id="PostVBox" maxWidth="-Infinity" prefWidth="648.0" />
+                              <VBox fx:id="CommentsSP" layoutX="334.0" layoutY="49.0" maxWidth="-Infinity" prefWidth="648.0" />
+                           </children>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox onMouseClicked="#returnToHomepage" prefHeight="200.0" prefWidth="500.0" />
+   </children>
+</HBox>
