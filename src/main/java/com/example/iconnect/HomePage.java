@@ -35,9 +35,7 @@ public class HomePage implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Image image = new Image(getClass().getResourceAsStream(UserManager.curr_user.getProfileImagePath()));
-        ProfileImageView.setFill(new ImagePattern(image));
-        UserManager.curr_user_profile = image;
+
         UsernameLabel.setText(UserManager.curr_user.getUsername());
         recentPosts.addAll(UserManager.getPostsToLoad());
         Collections.shuffle(recentPosts);
@@ -65,6 +63,9 @@ public class HomePage implements Initializable {
         {
             e.printStackTrace();
         }
+        Image image = new Image(getClass().getResourceAsStream(UserManager.curr_user.getProfileImagePath()));
+        ProfileImageView.setFill(new ImagePattern(image));
+        UserManager.curr_user_profile = image;
     }
     public void GoToCreatePostText(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateText.fxml"));

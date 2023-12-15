@@ -146,4 +146,17 @@ public class User implements Serializable {
     public void setProfileImagePath(String profileImagePath) {
         ProfileImagePath = profileImagePath;
     }
+
+    public User returnFriend(String name) {
+        for (User friend : friends) {
+            if (friend.getUsername().equals(name)) {
+                return friend;
+
+
+            }
+        }
+        return null;
+    }
+
+
 }
