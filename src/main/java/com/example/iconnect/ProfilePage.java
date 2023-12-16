@@ -178,4 +178,15 @@ public class ProfilePage implements Initializable {
         profileOwner = ProfileOwner.UnknownUser;
         setButtons();
     }
+    public List<User> getMutualFriends(User friend)
+    {
+        List<User> mutualFriends=new ArrayList<>();
+        for(User mutual: UserManager.curr_user.getFriends())
+        {
+            if (friend.getFriends().contains(mutual)){
+                mutualFriends.add(mutual);
+            }
+        }
+        return mutualFriends;
+    }
 }
