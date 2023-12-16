@@ -18,6 +18,7 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class FriendsListGUI {
+
     @FXML
     VBox FriendVBox;
 
@@ -48,6 +49,7 @@ public class FriendsListGUI {
             FriendPanel friendPanel = loader.getController();
             friendPanel.setData(user,curr_conversation,FriendVBox,root,true);
             FriendVBox.getChildren().add(root);
+            System.out.println("hey");
         }
     }
 }

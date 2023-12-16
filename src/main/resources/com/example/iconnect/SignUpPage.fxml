@@ -82,9 +82,9 @@
                </font>
             </RadioButton>
             <DatePicker fx:id="DatePick" layoutX="629.0" layoutY="440.0" stylesheets="@SignUpCss.css" />
-            <Label fx:id="ErrorLabel" alignment="CENTER" layoutX="80.0" layoutY="140.0" prefHeight="185.0" prefWidth="358.0" textAlignment="CENTER" textFill="#7c0000" wrapText="true">
+            <Label fx:id="ErrorLabel" alignment="CENTER" layoutX="430.0" layoutY="13.0" prefHeight="66.0" prefWidth="512.0" textFill="#7c0000" wrapText="true">
                <font>
-                  <Font name="TimeBurner Bold" size="24.0" />
+                  <Font name="TimeBurner Bold" size="18.0" />
                </font>
             </Label>
             <Circle fx:id="ProfileImageView" fill="#7e7e7e" layoutX="255.0" layoutY="220.0" radius="56.0" stroke="BLACK" strokeType="INSIDE" />

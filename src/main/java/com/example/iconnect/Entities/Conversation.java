@@ -45,8 +45,10 @@ public class Conversation implements Serializable {
             System.out.println("user is already exist");
         }
         else
-          usersOfConcervation.add(user);
-        UsernamesOfParticipants.add(user.getUsername().toLowerCase());
+        {
+            usersOfConcervation.add(user);
+            UsernamesOfParticipants.add(user.getUsername().toLowerCase());
+        }
     }
     public void displayConservation(){
         for (Message item:allMessages) {

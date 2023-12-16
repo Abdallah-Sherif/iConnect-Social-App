@@ -1,5 +1,6 @@
 package com.example.iconnect;
 
+import com.example.iconnect.Entities.Conversation;
 import com.example.iconnect.Entities.User;
 import com.example.iconnect.FileManagement.UserManager;
 import javafx.application.Application;
