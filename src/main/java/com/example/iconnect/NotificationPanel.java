@@ -20,9 +20,12 @@ public class NotificationPanel {
     @FXML
     private Label UsernameTF;
     VBox notificationBar;
+    @FXML
     Parent NotificationBox;
+    Notification curr_notification;
     public void setData(Notification notification,Parent root,VBox notificationBar)
     {
+        curr_notification = notification;
         NotificationBox = root;
         this.notificationBar = notificationBar;
         UsernameTF.setText(notification.getMessage());
@@ -32,5 +35,6 @@ public class NotificationPanel {
     public void DeleteNotification(MouseEvent e)
     {
         notificationBar.getChildren().remove(NotificationBox);
+        UserManager.curr_user.RemoveNotification(curr_notification);
     }
 }

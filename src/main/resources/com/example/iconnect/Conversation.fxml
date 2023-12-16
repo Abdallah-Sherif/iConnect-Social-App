@@ -15,30 +15,30 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.ConversationPanel">
    <children>
       <ImageView fitHeight="735.0" fitWidth="1299.0" layoutX="-4.0" layoutY="-3.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../../../../../../../../Downloads/WhatsApp%20Image%202023-12-12%20at%2011.41.08%20PM.jpeg" />
+            <Image url="@Background.jpg" />
          </image>
       </ImageView>
       <Pane layoutX="316.0" layoutY="630.0" prefHeight="83.0" prefWidth="640.0" style="-fx-background-color: #242526; -fx-background-radius: 50;">
          <children>
-            <TextField layoutX="45.0" layoutY="11.0" opacity="0.73" prefHeight="60.0" prefWidth="497.0">
+            <TextField fx:id="MessageContentTF" layoutX="45.0" layoutY="11.0" opacity="0.73" prefHeight="60.0" prefWidth="497.0">
                <font>
                   <Font name="TimeBurner Bold" size="18.0" />
                </font>
             </TextField>
-            <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="553.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="62.0" fitWidth="62.0" layoutX="553.0" layoutY="12.0" onMouseClicked="#createNewMsg" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../../../Downloads/download-removebg-preview.png" />
+                  <Image url="@send.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="29.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="161.0" fitWidth="239.0" layoutX="29.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../Downloads/202-2022960_left-white-arrow-icon-hd-png-download-removebg-preview.png" />
+            <Image url="@iConnect.png" />
          </image>
          <effect>
             <Glow />
@@ -46,7 +46,7 @@
       </ImageView>
       <ScrollPane layoutX="303.0" layoutY="124.0" prefHeight="496.0" prefWidth="664.0" style="-fx-background-color: Transparent;">
          <content>
-            <VBox prefWidth="642.0" style="-fx-background-color: #4D4E4F;" />
+            <VBox fx:id="MessagesVBox" prefWidth="642.0" style="-fx-background-color: #4D4E4F;" />
          </content>
       </ScrollPane>
       <HBox layoutX="324.0" layoutY="28.0" prefHeight="85.0" prefWidth="626.0">
@@ -55,7 +55,7 @@
                <children>
                   <ImageView fitHeight="80.0" fitWidth="90.0" layoutX="58.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../../../Downloads/Social_Media_free_vector_icons_designed_by_Eucalyp-removebg-preview.png" />
+                        <Image url="@Social_Media_free_vector_icons_designed_by_Eucalyp-removebg-preview.png" />
                      </image>
                   </ImageView>
                   <Separator layoutX="154.0" layoutY="4.0" opacity="0.41" orientation="VERTICAL" prefHeight="85.0" prefWidth="18.0" />
@@ -84,9 +84,9 @@
             </Pane>
          </children>
       </HBox>
-      <ImageView fitHeight="64.0" fitWidth="100.0" layoutX="968.0" layoutY="639.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="64.0" fitWidth="100.0" layoutX="968.0" layoutY="639.0" onMouseClicked="#addUser" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../../../Downloads/pngtree-add-contact-icon-png-image_4479687-removebg-preview.png" />
+            <Image url="@AddUserIcon.png" />
          </image>
          <effect>
             <Glow />

@@ -3,26 +3,35 @@ package com.example.iconnect.Entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Conservation {
-    public int Id;
+public class Conversation {
+    public static int Id;
+    private int id;
+    private String nameOfChat;
 
-    public String nameOfChat;
-    public List<User>usersOfConcervation=new ArrayList<>();
+    public List<User> getUsersOfConversation() {
+        return usersOfConcervation;
+    }
+
+    private List<User>usersOfConcervation=new ArrayList<>();
+
+    public List<Message> getAllMessages() {
+        return allMessages;
+    }
 
     private List <Message> allMessages=new ArrayList<>();
 
-    public Conservation(int id, User curr ,String nameOfChat) {
-        Id = id;
+    public Conversation(User curr , String nameOfChat) {
         this.usersOfConcervation .add(curr);
         this.nameOfChat=nameOfChat;
-
+        id = Id;
+        Id++;
     }
 
     public void sendMessage(User current, String message){
         Message currentMessage=new Message(current,message);
         allMessages.add(currentMessage);
     }
-    public void setUsersOfConcervation(User user) {
+    public void addUser(User user) {
         if(usersOfConcervation.contains(user)){
             System.out.println("user is already exist");
         }
@@ -48,4 +57,7 @@ public class Conservation {
         }
     }
 
+    public String getNameOfChat() {
+        return nameOfChat;
+    }
 }

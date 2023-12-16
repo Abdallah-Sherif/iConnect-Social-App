@@ -40,7 +40,7 @@ public class UserSearchPanel {
         ProfilePage profilePage = fxmlLoader.getController();
         profilePage.setData(SearchUser);
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root,true);
+        SceneTransitions.doFadeIn(StartUpPane,root);
         StartUpPane.getChildren().remove(PostSelectedPanel);
     }
 }

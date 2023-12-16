@@ -123,7 +123,7 @@ public class Post implements Serializable{
 
     public void sendTaggedNotification(User author,User tagged){
         Notification notification=new TaggedUserNotification(author.getUsername()+" tagged you in post",author);
-        tagged.addNotifications2((TaggedUserNotification)notification);
+        tagged.addNotifications(notification);
     }
 
 

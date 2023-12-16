@@ -68,7 +68,7 @@ public class PostCreationGUI implements Initializable {
         }
         Parent root = FXMLLoader.load(this.getClass().getResource("HomePage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root,true);
+        SceneTransitions.doFadeIn(StartUpPane,root);
     }
     private void getAvailabelUsers()
     {
@@ -90,7 +90,7 @@ public class PostCreationGUI implements Initializable {
         }
         Parent root = FXMLLoader.load(this.getClass().getResource("HomePage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root,true);
+        SceneTransitions.doFadeIn(StartUpPane,root);
     }
     private String chooseProfilePicture() {
         FileChooser fileChooser = new FileChooser();
