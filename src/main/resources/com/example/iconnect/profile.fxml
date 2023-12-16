@@ -3,6 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,7 +34,7 @@
                   </StackPane>
                </content>
             </ScrollPane>
-            <Pane layoutX="14.0" layoutY="69.0" prefHeight="305.0" prefWidth="337.0" style="-fx-background-color: #3A3B3C; -fx-background-radius: 50;">
+            <Pane layoutX="14.0" layoutY="69.0" prefHeight="253.0" prefWidth="326.0" style="-fx-background-color: #3A3B3C; -fx-background-radius: 50;">
                <children>
                   <Label layoutX="45.0" layoutY="20.0" text="Details" textFill="#d6d9dc">
                      <font>
@@ -41,23 +43,23 @@
                   </Label>
                   <Label layoutX="14.0" layoutY="106.0" text="BirthDate:" textFill="#e1dbdb">
                      <font>
-                        <Font name="TimeBurner Bold" size="30.0" />
+                        <Font name="TimeBurner Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="14.0" layoutY="217.0" text="Gender:" textFill="#e1dbdb">
+                  <Label layoutX="22.0" layoutY="169.0" text="Gender:" textFill="#e1dbdb">
                      <font>
-                        <Font name="TimeBurner Bold" size="30.0" />
+                        <Font name="TimeBurner Bold" size="24.0" />
                      </font>
                   </Label>
                   <Line endX="155.4000244140625" layoutX="173.0" layoutY="88.0" opacity="0.48" startX="-164.59999084472656" stroke="#56585b" />
-                  <Label fx:id="BirthDateL" layoutX="153.0" layoutY="103.0" prefHeight="50.0" prefWidth="168.0" text="25/4/2004" textFill="#eae7e7">
+                  <Label fx:id="BirthDate" layoutX="120.0" layoutY="99.0" prefHeight="50.0" prefWidth="168.0" text="25/4/2004" textFill="#eae7e7">
                      <font>
-                        <Font name="TimeBurner Bold" size="26.0" />
+                        <Font name="TimeBurner Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="GenderL" layoutX="141.0" layoutY="214.0" prefHeight="50.0" prefWidth="193.0" text="Female" textFill="#eae7e7">
+                  <Label fx:id="genderLabel" layoutX="118.0" layoutY="162.0" prefHeight="50.0" prefWidth="193.0" text="Female" textFill="#eae7e7">
                      <font>
-                        <Font name="TimeBurner Bold" size="29.0" />
+                        <Font name="TimeBurner Bold" size="24.0" />
                      </font>
                   </Label>
                </children></Pane>
@@ -66,16 +68,38 @@
                   <Font name="TimeBurner Bold" size="26.0" />
                </font>
             </Label>
-            <ScrollPane hbarPolicy="NEVER" layoutX="964.0" layoutY="135.0" prefHeight="435.0" prefWidth="298.0" vbarPolicy="NEVER">
-               <content>
-                  <StackPane>
-                     <children>
-                        <Pane prefHeight="435.0" prefWidth="298.0" />
-                        <VBox prefWidth="297.0" style="-fx-background-color: #18191a;" />
-                     </children>
-                  </StackPane>
-               </content>
-            </ScrollPane>
+            <TabPane layoutX="964.0" layoutY="135.0" prefHeight="431.0" prefWidth="298.0">
+               <tabs>
+                  <Tab text="Friends">
+                     <content>
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="435.0" prefWidth="298.0" vbarPolicy="NEVER">
+                           <content>
+                              <StackPane>
+                                 <children>
+                                    <Pane prefHeight="398.0" prefWidth="298.0" />
+                                    <VBox fx:id="FriendVBox" prefHeight="402.0" prefWidth="298.0" style="-fx-background-color: #18191a;" />
+                                 </children>
+                              </StackPane>
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="mutualFriends" text="Mutual Friends">
+                     <content>
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="435.0" prefWidth="298.0" vbarPolicy="NEVER">
+                           <content>
+                              <StackPane>
+                                 <children>
+                                    <Pane prefHeight="435.0" prefWidth="298.0" />
+                                    <VBox fx:id="MutualVBox" prefWidth="297.0" style="-fx-background-color: #18191a;" />
+                                 </children>
+                              </StackPane>
+                           </content>
+                        </ScrollPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
             <Button fx:id="AddFriendBTN" layoutX="1056.0" layoutY="33.0" mnemonicParsing="false" onAction="#sendFriend" text="Add friend!">
                <font>
                   <Font name="TimeBurner Bold" size="18.0" />
