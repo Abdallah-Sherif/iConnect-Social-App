@@ -7,16 +7,15 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Comment implements Serializable {
+public class Comment extends Text implements Serializable{
 
     private Post post;
-    private User user;
-    private String content;
+
     private List<User> likes = new ArrayList<>();
     public Comment(Post post, User user, String content) {
+        super(content,user);
         this.post = post;
-        this.user = user;
-        this.content = content;
+
     }
 
     public Post getPost() {
