@@ -75,11 +75,7 @@
       </HBox>
    </top>
    <left>
-      <ScrollPane hbarPolicy="NEVER" prefHeight="650.0" prefWidth="350.0" style="-fx-background-color: Transparent; -fx-focus-color: Transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
-         <content>
-            <VBox prefHeight="804.0" prefWidth="348.0" style="-fx-background-color: #18191a;" />
-         </content>
-      </ScrollPane>
+      <VBox prefHeight="804.0" prefWidth="348.0" style="-fx-background-color: #18191a;" />
    </left>
    <right>
       <ScrollPane hbarPolicy="NEVER" prefHeight="650.0" prefWidth="350.0" style="-fx-background-color: Transparent; -fx-focus-color: Transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">

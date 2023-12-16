@@ -61,6 +61,7 @@ public class ProfilePage implements Initializable {
         Collections.shuffle(profilePosts);
         try{
             for (Post post : profilePosts) {
+                if(post.getPrivacy() && !user.getFriends().contains(UserManager.curr_user)) continue;
                 FXMLLoader fxmlLoader = new FXMLLoader();
                 Parent root;
                 if(post.getImageData() == null)
@@ -157,7 +158,7 @@ public class ProfilePage implements Initializable {
     public void returnToHomeepage(MouseEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("HomePage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root,true);
+        SceneTransitions.doFadeIn(StartUpPane,root);
     }
     public void sendFriend(ActionEvent e)
     {

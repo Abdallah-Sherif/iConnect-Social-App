@@ -35,10 +35,9 @@ public class User implements Serializable {
     public List<Notification> getCurrentNotifications() {
         return CurrentNotifications;
     }
-    //****
-
-    public void addNotifications2(TaggedUserNotification newNotification) {
-        taggedUserNotifications.add(newNotification);
+    public void RemoveNotification(Notification notification)
+    {
+        CurrentNotifications.remove(notification);
     }
     //****
     public void addNotifications(Notification newNotification) {

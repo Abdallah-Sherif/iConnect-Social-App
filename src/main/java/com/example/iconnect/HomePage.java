@@ -76,12 +76,12 @@ public class HomePage implements Initializable {
     public void GoToCreatePostText(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateText.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root,true);
+        SceneTransitions.doFadeIn(StartUpPane,root);
     }
     public void GoToCreatePostImage(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateImage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root,true);
+        SceneTransitions.doFadeIn(StartUpPane,root);
     }
     public void GoToProfilePage(MouseEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader();
@@ -91,7 +91,7 @@ public class HomePage implements Initializable {
         ProfilePage profilePage = fxmlLoader.getController();
         profilePage.setData(UserManager.curr_user);
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
-        SceneTransitions.doFadeIn(StartUpPane,root,true);
+        SceneTransitions.doFadeIn(StartUpPane,root);
     }
     public void OpenSearchPanel(MouseEvent e) throws IOException {
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
@@ -116,5 +116,10 @@ public class HomePage implements Initializable {
         fxmlLoader.setLocation(getClass().getResource("NotificationBar.fxml"));
         root = fxmlLoader.load();
         StartUpPane.getChildren().add(root);
+    }
+    public void openAvailableChats(MouseEvent e) throws IOException {
+        Parent root = FXMLLoader.load(this.getClass().getResource("Chat.fxml"));
+        StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
+        SceneTransitions.doFadeIn(StartUpPane,root);
     }
 }

@@ -25,6 +25,8 @@ public class UserManager {
     public static User curr_user;
     public static Image curr_user_profile;
     protected static String usersFilePath = "users.dat";
+    protected static String ChatsFilePath = "chats.dat";
+    public static List<Conversation> chats;
 
     public static void AddUser(User user)
     {
@@ -45,15 +47,25 @@ public class UserManager {
             out.writeObject(users);
         } catch (IOException e) {
         }
+         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(ChatsFilePath))) {
+             out.writeObject(chats);
+         } catch (IOException e) {
+         }
      }
 
     public static void loadUsers() {
         users.clear();
+        chats.clear();
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(usersFilePath))) {
             users = (List<User>) in.readObject();
         } catch (IOException | ClassNotFoundException e) {
         }
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(ChatsFilePath))) {
+            chats = (List<Conversation>) in.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+        }
     }
+
     public static void DisplayUsers()
     {
         for(User user : users)

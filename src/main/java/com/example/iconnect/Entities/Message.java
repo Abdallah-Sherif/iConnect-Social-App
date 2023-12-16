@@ -9,7 +9,7 @@ public class Message implements Serializable {
     private String currentDateTime;
     private String content;
 
-    public Message( User sender, String content) {
+    public Message(User sender, String content) {
 
         this.sender = sender;
         LocalDateTime currentDate = LocalDateTime.now();
