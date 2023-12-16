@@ -126,6 +126,19 @@ public class SignUpPage {
             ErrorLabel.setText("Your password need to contain a capital letter ,small letter ,number and symbol");
             return;
         }
+        for(User user:UserManager.users)
+        {
+            if(user.getUsername().equals(UserName))
+            {
+                ErrorLabel.setText("Username already taken. please choose another username");
+                return;
+            }
+        }
+        if(currentImagePath == null)
+        {
+            ErrorLabel.setText("Please choose a profile picture");
+            return;
+        }
         User NewUser = new User(UserName,Pass,EmailTF.getText(),gender,userBirthDate,ImageUrl);
         UserManager.AddUser(NewUser);
 
@@ -133,7 +146,7 @@ public class SignUpPage {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logout");
         alert.setHeaderText("Restart");
-        alert.setContentText("this program will now restart");
+        alert.setContentText("SignUp successful! the app will now restart");
         if(alert.showAndWait().get() == ButtonType.OK || alert.showAndWait().get() == ButtonType.CANCEL)
         {
             Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();

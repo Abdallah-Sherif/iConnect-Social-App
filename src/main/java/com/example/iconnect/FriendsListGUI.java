@@ -41,7 +41,7 @@ public class FriendsListGUI {
     private void loadFriends() throws IOException {
         for(User user: UserManager.curr_user.getFriends())
         {
-            if(curr_conversation.getUsernamesOfParticipants().contains(UserManager.curr_user.getUsername().toLowerCase())) continue;
+            //if(curr_conversation.getUsernamesOfParticipants().contains(UserManager.curr_user.getUsername().toLowerCase())) continue;
             FXMLLoader loader = new FXMLLoader();
             Parent root;
             loader.setLocation(getClass().getResource("friend_list.fxml"));
