@@ -7,48 +7,47 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
 public class FriendsListGUI {
     @FXML
-    ListView<User> FriendListView;
+    VBox FriendVBox;
 
     @FXML
     HBox PostSelectedPanel;
-
+    Parent FriendPanel;
     @FXML
     void returnToConversation(MouseEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        Parent root;
-        fxmlLoader.setLocation(getClass().getResource("Conversation.fxml"));
-        root = fxmlLoader.load();
-        ConversationPanel conversationPanel = fxmlLoader.getController();
-        conversationPanel.setData(curr_conversation);
+        StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
+        StartUpPane.getChildren().remove(FriendPanel);
     }
     Conversation curr_conversation;
-    public void setData(Conversation conversation)
-    {
+    public void setData(Conversation conversation,Parent FriendPanel) throws IOException {
+        this.FriendPanel = FriendPanel;
         curr_conversation = conversation;
         loadFriends();
-        FriendListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<User>() {
-            @Override
-            public void changed(ObservableValue<? extends User> observableValue, User user, User t1) {
-                curr_conversation.addUser(FriendListView.getSelectionModel().getSelectedItem());
-            }
-        });
+
 
     }
-    private void loadFriends()
-    {
+    private void loadFriends() throws IOException {
         for(User user: UserManager.curr_user.getFriends())
         {
-            if(curr_conversation.getUsersOfConversation().contains(user)) continue;
-            FriendListView.getItems().add(user);
+            if(curr_conversation.getUsernamesOfParticipants().contains(UserManager.curr_user.getUsername().toLowerCase())) continue;
+            FXMLLoader loader = new FXMLLoader();
+            Parent root;
+            loader.setLocation(getClass().getResource("friend_list.fxml"));
+            root = loader.load();
+            FriendPanel friendPanel = loader.getController();
+            friendPanel.setData(user,curr_conversation,FriendVBox,root);
+            FriendVBox.getChildren().add(root);
         }
     }
 }

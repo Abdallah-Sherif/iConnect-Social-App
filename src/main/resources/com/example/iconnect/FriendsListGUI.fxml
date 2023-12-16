@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <HBox fx:id="PostSelectedPanel" alignment="CENTER" prefHeight="720.0" prefWidth="1280.0" stylesheets="@PostCss.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.FriendsListGUI">
    <children>
@@ -15,7 +17,20 @@
                <content>
                   <StackPane>
                      <children>
-                        <ListView fx:id="FriendListView" prefHeight="600.0" prefWidth="525.0" />
+                        <Pane prefHeight="600.0" prefWidth="525.0" />
+                        <VBox fx:id="FriendVBox" prefWidth="525.0" style="-fx-background-color: #18191a;">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3a3b3c;">
+                                 <children>
+                                    <Label text="Add Friends To The Group!" textFill="#cccccc">
+                                       <font>
+                                          <Font name="TimeBurner Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </StackPane>
                </content>

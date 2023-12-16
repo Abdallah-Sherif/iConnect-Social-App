@@ -53,20 +53,20 @@
       </Label>
       <ScrollPane hbarPolicy="NEVER" layoutX="355.0" layoutY="119.0" prefHeight="602.0" prefWidth="615.0" style="-fx-background-color: Transparent;" vbarPolicy="NEVER">
          <content>
-            <StackPane>
+            <StackPane style="-fx-background-color: Transparent;">
                <children>
                   <Pane prefHeight="600.0" prefWidth="615.0" />
-                  <VBox fx:id="ChatsVBox" prefWidth="615.0" style="-fx-background-color: #18191a; -fx-background-radius: 50;" />
+                  <VBox fx:id="ChatsVBox" prefWidth="615.0" style="-fx-background-color: #18191a;" />
                </children>
             </StackPane>
          </content>
       </ScrollPane>
-      <ImageView fitHeight="152.0" fitWidth="238.0" layoutX="41.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="152.0" fitWidth="238.0" layoutX="41.0" layoutY="25.0" onMouseClicked="#returntoHomepage" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@iConnect.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="94.0" fitWidth="93.0" layoutX="865.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="94.0" fitWidth="93.0" layoutX="865.0" layoutY="31.0" onMouseClicked="#addChat" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@AddChatIcon.png" />
          </image>

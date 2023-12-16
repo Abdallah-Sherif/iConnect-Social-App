@@ -36,6 +36,14 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="426.0">
                <children>
+                  <ImageView fitHeight="59.0" fitWidth="53.0" onMouseClicked="#openAvailableChats" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@bubble-chat.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                  </ImageView>
                   <ImageView fx:id="SearchBTN" fitHeight="37.0" fitWidth="39.0" onMouseClicked="#OpenSearchPanel" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@SearchIcon.png" />

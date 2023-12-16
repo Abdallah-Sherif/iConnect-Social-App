@@ -22,7 +22,12 @@ public class ChatPanel {
         curr_conversation = conversation;
     }
     public void openChat(MouseEvent e) throws IOException {
-        Parent root = FXMLLoader.load(this.getClass().getResource("Conversation.fxml"));
+        FXMLLoader loader = new FXMLLoader();
+        Parent root;
+        loader.setLocation(this.getClass().getResource("Conversation.fxml"));
+        root = loader.load();
+        ConversationPanel conversationPanel = loader.getController();
+        conversationPanel.setData(curr_conversation);
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
         SceneTransitions.doFadeIn(StartUpPane,root);
     }

@@ -1,9 +1,10 @@
 package com.example.iconnect.Entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Conversation {
+public class Conversation implements Serializable {
     public static int Id;
     private int id;
     private String nameOfChat;
@@ -14,6 +15,13 @@ public class Conversation {
 
     private List<User>usersOfConcervation=new ArrayList<>();
 
+
+    public List<String> getUsernamesOfParticipants() {
+        return UsernamesOfParticipants;
+    }
+
+    private List<String> UsernamesOfParticipants = new ArrayList<>();
+
     public List<Message> getAllMessages() {
         return allMessages;
     }
@@ -23,13 +31,14 @@ public class Conversation {
     public Conversation(User curr , String nameOfChat) {
         this.usersOfConcervation .add(curr);
         this.nameOfChat=nameOfChat;
+        usersOfConcervation.add(curr);
+        UsernamesOfParticipants.add(curr.getUsername().toLowerCase());
         id = Id;
         Id++;
     }
 
-    public void sendMessage(User current, String message){
-        Message currentMessage=new Message(current,message);
-        allMessages.add(currentMessage);
+    public void sendMessage(User current, Message message){
+        allMessages.add(message);
     }
     public void addUser(User user) {
         if(usersOfConcervation.contains(user)){
@@ -37,6 +46,7 @@ public class Conversation {
         }
         else
           usersOfConcervation.add(user);
+        UsernamesOfParticipants.add(user.getUsername().toLowerCase());
     }
     public void displayConservation(){
         for (Message item:allMessages) {

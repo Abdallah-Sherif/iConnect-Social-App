@@ -15,13 +15,22 @@ public class User implements Serializable {
     private String username;
     private String password;
     private String email;
+
+    public LocalDate getBirthdate() {
+        return birthdate;
+    }
+
     private LocalDate birthdate;
+
+    public String getGender() {
+        return gender;
+    }
+
     private String gender;
     private List<User> friends;
     private List<User> sentFriendRequests;
     private List<User> receivedFriendRequests;
     private List<Notification> CurrentNotifications = new ArrayList<>();
-
     public List<FriendRequestNotification> getCurrentRequestNotifications() {
         return currentRequestNotifications;
     }

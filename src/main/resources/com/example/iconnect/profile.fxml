@@ -50,12 +50,12 @@
                      </font>
                   </Label>
                   <Line endX="155.4000244140625" layoutX="173.0" layoutY="88.0" opacity="0.48" startX="-164.59999084472656" stroke="#56585b" />
-                  <Label layoutX="153.0" layoutY="103.0" prefHeight="50.0" prefWidth="168.0" text="25/4/2004" textFill="#eae7e7">
+                  <Label fx:id="BirthDateL" layoutX="153.0" layoutY="103.0" prefHeight="50.0" prefWidth="168.0" text="25/4/2004" textFill="#eae7e7">
                      <font>
                         <Font name="TimeBurner Bold" size="26.0" />
                      </font>
                   </Label>
-                  <Label layoutX="141.0" layoutY="214.0" prefHeight="50.0" prefWidth="193.0" text="Female" textFill="#eae7e7">
+                  <Label fx:id="GenderL" layoutX="141.0" layoutY="214.0" prefHeight="50.0" prefWidth="193.0" text="Female" textFill="#eae7e7">
                      <font>
                         <Font name="TimeBurner Bold" size="29.0" />
                      </font>

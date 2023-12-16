@@ -20,6 +20,7 @@ import javafx.scene.shape.Circle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -48,6 +49,10 @@ public class ProfilePage implements Initializable {
     Label nameLabel;
     @FXML
     VBox VprofilrPost;
+    @FXML
+    Label GenderL;
+    @FXML
+    Label BirthDateL;
     ProfileOwner profileOwner = ProfileOwner.CurrentUser;
     //list to take user posts
     private List<Post> profilePosts=new ArrayList<>();
@@ -57,6 +62,11 @@ public class ProfilePage implements Initializable {
         Image image = new Image(getClass().getResourceAsStream(profileUser.getProfileImagePath()));
         nameLabel.setText(profileUser.getUsername());
         CircleImageView.setFill(new ImagePattern(image));
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        String formattedDateString = user.getBirthdate().format(formatter);
+        BirthDateL.setText(formattedDateString);
+        GenderL.setText(user.getGender());
         profilePosts.addAll(profileUser.getPosts());
         Collections.shuffle(profilePosts);
         try{

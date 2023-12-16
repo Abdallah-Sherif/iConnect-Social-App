@@ -26,7 +26,7 @@ public class UserManager {
     public static Image curr_user_profile;
     protected static String usersFilePath = "users.dat";
     protected static String ChatsFilePath = "chats.dat";
-    public static List<Conversation> chats;
+    public static List<Conversation> chats = new ArrayList<>();
 
     public static void AddUser(User user)
     {
@@ -94,6 +94,10 @@ public class UserManager {
             }
         }
         return posts;
+    }
+    public static void addConversation(Conversation conversation)
+    {
+        chats.add(conversation);
     }
     public static User IsUser(String Username,String Password)
     {
@@ -169,14 +173,14 @@ public class UserManager {
     
     public static void sendRequestNotification(User sender,User reciever)
     {
-        Notification notification = new FriendRequestNotification(sender.getUsername()+" send you a friend request",sender);
+        Notification notification = new FriendRequestNotification(sender.getUsername()+" sent you a friend request!",sender);
         reciever.addNotifications(notification);
     }
       
        
     public static void sendAcceptNotification(User sender,User reciever)
     {
-        Notification notification = new FriendRequestNotification(reciever.getUsername()+" accepted your request",reciever);
+        Notification notification = new FriendRequestNotification(reciever.getUsername()+" accepted your request!",reciever);
        sender.addNotifications(notification);
     }
     

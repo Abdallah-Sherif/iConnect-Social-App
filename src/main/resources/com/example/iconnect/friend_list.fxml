@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.paint.Color?>
@@ -12,41 +13,48 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <HBox prefHeight="91.0" prefWidth="298.0" style="-fx-background-color: #3A3B3C; -fx-background-radius: 50;">
+<BorderPane style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iconnect.FriendPanel">
+   <center>
+      <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#addToConversation" prefHeight="100.0" prefWidth="297.0" style="-fx-background-color: #3a3b3c; -fx-background-radius: 50;">
          <children>
-            <Circle fill="#f1f3f4" radius="41.0" stroke="BLACK" strokeType="INSIDE">
-               <HBox.margin>
-                  <Insets left="4.0" top="3.0" />
-               </HBox.margin>
-            </Circle>
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
-            <Label prefHeight="38.0" prefWidth="193.0" text="Friend name">
-               <font>
-                  <Font name="TimeBurner Bold" size="26.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop>
-                           <color>
-                              <Color red="0.8526315689086914" green="0.7378947138786316" blue="0.5084210634231567" />
-                           </color>
-                        </Stop>
-                        <Stop offset="1.0">
-                           <color>
-                              <Color red="1.0" green="1.0" blue="1.0" />
-                           </color>
-                        </Stop>
-                     </stops>
-                  </LinearGradient>
-               </textFill>
-               <HBox.margin>
-                  <Insets top="25.0" />
-               </HBox.margin>
-            </Label>
+            <HBox prefHeight="91.0" prefWidth="298.0">
+               <children>
+                  <Circle fx:id="ProfileImageView" fill="#f1f3f4" radius="41.0" stroke="BLACK" strokeType="INSIDE">
+                     <HBox.margin>
+                        <Insets left="4.0" top="3.0" />
+                     </HBox.margin>
+                  </Circle>
+                  <Separator opacity="0.0" orientation="VERTICAL" prefHeight="200.0" />
+                  <Label fx:id="usernameTF" prefHeight="38.0" prefWidth="193.0" text="Friend name">
+                     <font>
+                        <Font name="TimeBurner Bold" size="26.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.8526315689086914" green="0.7378947138786316" blue="0.5084210634231567" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
          </children>
-      </HBox>
-   </children>
-</VBox>
+      </VBox>
+   </center>
+   <padding>
+      <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+   </padding>
+</BorderPane>
