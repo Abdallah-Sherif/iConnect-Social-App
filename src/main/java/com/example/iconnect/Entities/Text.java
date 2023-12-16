@@ -2,7 +2,7 @@ package com.example.iconnect.Entities;
 
 import java.io.Serializable;
 
-public abstract class Text  {
+public abstract class Text implements Serializable {
     public String content;
     public User user;
 

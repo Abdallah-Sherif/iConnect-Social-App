@@ -1,6 +1,7 @@
 package com.example.iconnect;
 
 import com.example.iconnect.Entities.Post;
+import com.example.iconnect.Entities.User;
 import com.example.iconnect.FileManagement.UserManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +30,8 @@ public class HomePage implements Initializable {
     Circle ProfileImageView;
     @FXML
     Label UsernameLabel;
+    @FXML
+    VBox FriendVBox;
     private List<Post> recentPosts = new ArrayList<>();
 
     @Override
@@ -71,8 +74,26 @@ public class HomePage implements Initializable {
             Image image = new Image(getClass().getResourceAsStream("user.png"));
             ProfileImageView.setFill(new ImagePattern(image));
         }
+        SetFriends();
     }
-
+    private void SetFriends()
+    {
+        FriendVBox.getChildren().clear();
+        for(User user: UserManager.curr_user.getFriends())
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            Parent root;
+            fxmlLoader.setLocation(getClass().getResource("friend_list.fxml"));
+            try {
+                root = fxmlLoader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            FriendPanel chatPanel = fxmlLoader.getController();
+            chatPanel.setData(user,null,null,root,false);
+            FriendVBox.getChildren().add(root);
+        }
+    }
     public void GoToCreatePostText(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("PostCreateText.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();

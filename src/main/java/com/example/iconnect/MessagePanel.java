@@ -22,8 +22,8 @@ public class MessagePanel {
     public void setData(Message message)
     {
         MessageL.setText(message.getContent());
-        UsernameL.setText(message.getSender().getUsername());
-        Image image = new Image(getClass().getResourceAsStream(message.getSender().getProfileImagePath()));
+        UsernameL.setText(message.getUser().getUsername());
+        Image image = new Image(getClass().getResourceAsStream(message.getUser().getProfileImagePath()));
         ProfileImageView.setFill(new ImagePattern(image));
     }
 }

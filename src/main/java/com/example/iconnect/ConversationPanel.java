@@ -43,7 +43,7 @@ public class ConversationPanel {
         BorderPane root;
         fxmlLoader.setLocation(getClass().getResource("Messages.fxml"));
         root = fxmlLoader.load();
-        if(message.getSender().getUsername().toLowerCase().equals(UserManager.curr_user.getUsername().toLowerCase()))
+        if(message.getUser().getUsername().toLowerCase().equals(UserManager.curr_user.getUsername().toLowerCase()))
         {
             HBox hBox = new HBox();
             root.setRight(hBox);

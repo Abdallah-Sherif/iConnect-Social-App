@@ -40,6 +40,7 @@ public class SearchResultsGUI {
     }
 
     public void Search(MouseEvent e) throws IOException {
+        SearchResultsVBox.getChildren().clear();
         String result = SearchBar.getText().toLowerCase();
         if (result != null) {
             for (User user : UserManager.users) {

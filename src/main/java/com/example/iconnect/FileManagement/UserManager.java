@@ -87,7 +87,7 @@ public class UserManager {
             if(user.equals(curr_user)) continue;
             for(Post post : user.getPosts())
             {
-                if(!post.getPrivacy() || user.getFriends().contains(curr_user))
+                if(!post.getPrivacy() || (user.getFriends().contains(curr_user) && !user.getRestrictedFriends().contains(curr_user) && post.getPrivacy()) )
                 {
                     posts.add(post);
                 }

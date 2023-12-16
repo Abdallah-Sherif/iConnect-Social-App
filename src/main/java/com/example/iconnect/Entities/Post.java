@@ -32,19 +32,16 @@ public class Post implements Serializable{
     private List<User> likes = new ArrayList<>();
 
 
-    private List<User> taggedUsers = new ArrayList<>();
     private List<Comment> comments = new ArrayList<>();
+
     
-    List<Post> randomPost = new ArrayList<>();
-    
-    public Post(String content, User author,boolean isPrivate,String imageUrl,List<User> taggedusers) {
+    public Post(String content, User author,boolean isPrivate,String imageUrl) {
         this.content = content;
         this.author = author;
         this.timestamp = LocalDateTime.now();
         this.imageUrl = imageUrl;
         Post_ID = UniversalID;
         Privacy = isPrivate;
-        this.taggedUsers.addAll(taggedusers);
         UniversalID++;
         
     }
@@ -109,17 +106,7 @@ public class Post implements Serializable{
         
     }
     //button
-    public List<User> getTaggedUsers() {
-        return taggedUsers;
-    }
 
-    public void setTaggedUsers(List<User> taggedUsers) {
-        this.taggedUsers = taggedUsers;
-        for (User tagged:taggedUsers)
-        {
-            sendTaggedNotification(this.author,tagged);
-        }
-    }
 
     public void sendTaggedNotification(User author,User tagged){
         Notification notification=new TaggedUserNotification(author.getUsername()+" tagged you in post",author);

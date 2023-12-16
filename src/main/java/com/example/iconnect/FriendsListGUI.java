@@ -46,7 +46,7 @@ public class FriendsListGUI {
             loader.setLocation(getClass().getResource("friend_list.fxml"));
             root = loader.load();
             FriendPanel friendPanel = loader.getController();
-            friendPanel.setData(user,curr_conversation,FriendVBox,root);
+            friendPanel.setData(user,curr_conversation,FriendVBox,root,true);
             FriendVBox.getChildren().add(root);
         }
     }

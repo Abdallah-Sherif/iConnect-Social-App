@@ -30,6 +30,12 @@ public class User implements Serializable {
     private List<User> friends;
     private List<User> sentFriendRequests;
     private List<User> receivedFriendRequests;
+
+    public List<User> getRestrictedFriends() {
+        return RestrictedFriends;
+    }
+
+    private List<User> RestrictedFriends;
     private List<Notification> CurrentNotifications = new ArrayList<>();
     public List<FriendRequestNotification> getCurrentRequestNotifications() {
         return currentRequestNotifications;
@@ -65,6 +71,7 @@ public class User implements Serializable {
         this.CurrentNotifications = new ArrayList<>();
         this.currentRequestNotifications = new ArrayList<>();
         this.taggedUserNotifications = new ArrayList<>();
+        this.RestrictedFriends = new ArrayList<>();
     }
 
     public String getUsername() {
@@ -78,6 +85,14 @@ public class User implements Serializable {
         return friends;
     }
 
+    public void addRestrictedUser(User user)
+    {
+        RestrictedFriends.add(user);
+    }
+    public void removeRestrictedUser(User user)
+    {
+        RestrictedFriends.remove(user);
+    }
     public void removeFriend(User friend) {
         friends.remove(friend);
     }
@@ -131,7 +146,7 @@ public class User implements Serializable {
     
     //button
     public void createPost(String content, User get, boolean par,String imageUrl,List<User> TaggedUsers) {
-        Post post = new Post(content, this,par,imageUrl,TaggedUsers);
+        Post post = new Post(content, this,par,imageUrl);
         addPost(post);
     }
     

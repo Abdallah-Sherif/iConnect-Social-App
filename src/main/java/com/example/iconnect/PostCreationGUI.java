@@ -29,9 +29,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 import java.util.concurrent.TimeUnit;
 
-public class PostCreationGUI implements Initializable {
-    @FXML
-    private ListView<User> AvailableUsersLV;
+public class PostCreationGUI {
 
     @FXML
     private TextField ContentTF;
@@ -50,33 +48,21 @@ public class PostCreationGUI implements Initializable {
     private Path currentImagePath;
     boolean alreadyExists = true;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        getAvailabelUsers();
-    }
 
     public void CreateAPost(ActionEvent e) throws IOException {
 
         if(ImageUrl == null)
         {
-            Post post = new Post(ContentTF.getText(),UserManager.curr_user,PrivacyCheckBox.isSelected(),null,AvailableUsersLV.getItems());
+            Post post = new Post(ContentTF.getText(),UserManager.curr_user,PrivacyCheckBox.isSelected(),null);
             UserManager.curr_user.addPost(post);
         }else
         {
-            Post post = new Post(null,UserManager.curr_user,PrivacyCheckBox.isSelected(),ImageUrl,AvailableUsersLV.getItems());
+            Post post = new Post(null,UserManager.curr_user,PrivacyCheckBox.isSelected(),ImageUrl);
             UserManager.curr_user.addPost(post);
         }
         Parent root = FXMLLoader.load(this.getClass().getResource("HomePage.fxml"));
         StackPane StartUpPane = (StackPane)((Node)e.getSource()).getScene().getRoot();
         SceneTransitions.doFadeIn(StartUpPane,root);
-    }
-    private void getAvailabelUsers()
-    {
-        AvailableUsersLV.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        for(User user : UserManager.curr_user.getFriends())
-        {
-            AvailableUsersLV.getItems().add(user);
-        }
     }
 
     public void setImageData(ActionEvent e)

@@ -35,7 +35,8 @@ public class CommentController implements Initializable {
         current_comment = comment;
         ContentL.setText(comment.getContent());
         UsernameL.setText(comment.getUser().getUsername());
-        UserImageV.setFill(new ImagePattern(UserManager.curr_user_profile));
+        Image image = new Image(getClass().getResourceAsStream(comment.getUser().getProfileImagePath()));
+        UserImageV.setFill(new ImagePattern(image));
         LikeCounter.setText("Like " + current_comment.getLikes().size());
         if(comment.getLikes().contains(UserManager.curr_user))
         {

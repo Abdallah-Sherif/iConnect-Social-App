@@ -88,7 +88,12 @@
    <right>
       <ScrollPane hbarPolicy="NEVER" prefHeight="650.0" prefWidth="350.0" style="-fx-background-color: Transparent; -fx-focus-color: Transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
-            <VBox prefHeight="802.0" prefWidth="349.0" style="-fx-background-color: #18191a;" />
+            <StackPane>
+               <children>
+                  <Pane prefHeight="650.0" prefWidth="349.0" />
+                  <VBox fx:id="FriendVBox" prefWidth="349.0" style="-fx-background-color: #18191a;" />
+               </children>
+            </StackPane>
          </content>
       </ScrollPane>
    </right>

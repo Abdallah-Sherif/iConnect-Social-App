@@ -52,12 +52,12 @@
                      </font>
                   </Label>
                   <Line endX="155.4000244140625" layoutX="173.0" layoutY="88.0" opacity="0.48" startX="-164.59999084472656" stroke="#56585b" />
-                  <Label fx:id="BirthDate" layoutX="120.0" layoutY="99.0" prefHeight="50.0" prefWidth="168.0" text="25/4/2004" textFill="#eae7e7">
+                  <Label fx:id="BirthDateL" layoutX="120.0" layoutY="99.0" prefHeight="50.0" prefWidth="168.0" text="25/4/2004" textFill="#eae7e7">
                      <font>
                         <Font name="TimeBurner Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="genderLabel" layoutX="118.0" layoutY="162.0" prefHeight="50.0" prefWidth="193.0" text="Female" textFill="#eae7e7">
+                  <Label fx:id="GenderL" layoutX="118.0" layoutY="162.0" prefHeight="50.0" prefWidth="193.0" text="Female" textFill="#eae7e7">
                      <font>
                         <Font name="TimeBurner Bold" size="24.0" />
                      </font>
@@ -100,7 +100,7 @@
                   </Tab>
                </tabs>
             </TabPane>
-            <Button fx:id="AddFriendBTN" layoutX="1056.0" layoutY="33.0" mnemonicParsing="false" onAction="#sendFriend" text="Add friend!">
+            <Button fx:id="AddFriendBTN" layoutX="962.0" layoutY="37.0" mnemonicParsing="false" onAction="#sendFriend" text="Add friend!">
                <font>
                   <Font name="TimeBurner Bold" size="18.0" />
                </font>
@@ -111,6 +111,11 @@
                </font>
             </Button>
             <Button fx:id="DeclineFriendBTN" layoutX="1120.0" layoutY="89.0" mnemonicParsing="false" onAction="#DeclineFriend" text="Decline Friend">
+               <font>
+                  <Font name="TimeBurner Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="RestrictFriendBTN" layoutX="1120.0" layoutY="37.0" mnemonicParsing="false" onAction="#restrictFriend" text="Restrict Friend">
                <font>
                   <Font name="TimeBurner Bold" size="18.0" />
                </font>

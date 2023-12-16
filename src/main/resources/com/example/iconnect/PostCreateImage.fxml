@@ -3,7 +3,6 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
@@ -63,12 +62,6 @@
                         </HBox>
                      </children>
                   </VBox>
-               </children>
-            </VBox>
-            <Separator opacity="0.0" orientation="VERTICAL" prefHeight="670.0" prefWidth="49.0" />
-            <VBox fx:id="PostPanel1" alignment="CENTER" layoutX="323.0" layoutY="95.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="331.0" stylesheets="@PostCss.css">
-               <children>
-                  <ListView fx:id="AvailableUsersLV" prefHeight="377.0" prefWidth="331.0" style="-fx-background-color: #181b1e; -fx-background-radius: 50;" />
                </children>
             </VBox>
          </children>
